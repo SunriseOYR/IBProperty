@@ -26,15 +26,13 @@
     
     if (underLine == true) {
         
+        [self setAttributedWirhAttributeName:NSUnderlineStyleAttributeName];
+        
         __weak typeof (self) weakSelf = self;
-
+        
         [self aspect_hookSelector:@selector(setText:) withOptions:AspectPositionAfter usingBlock:^(){
             
-            __strong typeof(weakSelf) strongSelf = weakSelf;
-
-            NSMutableAttributedString *aText = [[NSMutableAttributedString alloc] initWithString:strongSelf.text];
-            [aText addAttribute:NSUnderlineStyleAttributeName value:@(NSUnderlineStyleSingle) range:NSMakeRange(0, aText.length)];
-            strongSelf.attributedText = aText;
+            [weakSelf setAttributedWirhAttributeName:NSUnderlineStyleAttributeName];
         } error:nil];
         
     }
@@ -48,15 +46,13 @@
     
     if (middleLine == true) {
         
+        [self setAttributedWirhAttributeName:NSStrikethroughStyleAttributeName];
+        
         __weak typeof (self) weakSelf = self;
-
+        
         [self aspect_hookSelector:@selector(setText:) withOptions:AspectPositionAfter usingBlock:^(){
             
-            __strong typeof(weakSelf) strongSelf = weakSelf;
-
-            NSMutableAttributedString *aText = [[NSMutableAttributedString alloc] initWithString:strongSelf.text];
-            [aText addAttribute:NSStrikethroughStyleAttributeName value:@(NSUnderlineStyleSingle) range:NSMakeRange(0, aText.length)];
-            strongSelf.attributedText = aText;
+            [weakSelf setAttributedWirhAttributeName:NSStrikethroughStyleAttributeName];
         } error:nil];
         
     }
@@ -66,4 +62,12 @@
     return false;
 }
 
+- (void)setAttributedWirhAttributeName:(NSString *)key {
+    
+    NSMutableAttributedString *aText = [[NSMutableAttributedString alloc] initWithString:self.text];
+    [aText addAttribute:key value:@(NSUnderlineStyleSingle) range:NSMakeRange(0, aText.length)];
+    self.attributedText = aText;
+}
+
 @end
+
