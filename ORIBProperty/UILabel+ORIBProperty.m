@@ -29,7 +29,7 @@
         [self setAttributedWirhAttributeName:NSUnderlineStyleAttributeName];
         
         __weak typeof (self) weakSelf = self;
-        
+
         [self aspect_hookSelector:@selector(setText:) withOptions:AspectPositionAfter usingBlock:^(){
             
             [weakSelf setAttributedWirhAttributeName:NSUnderlineStyleAttributeName];
@@ -49,7 +49,7 @@
         [self setAttributedWirhAttributeName:NSStrikethroughStyleAttributeName];
         
         __weak typeof (self) weakSelf = self;
-        
+
         [self aspect_hookSelector:@selector(setText:) withOptions:AspectPositionAfter usingBlock:^(){
             
             [weakSelf setAttributedWirhAttributeName:NSStrikethroughStyleAttributeName];
@@ -70,4 +70,3 @@
 }
 
 @end
-

@@ -25,9 +25,9 @@ static const NSString *adaptSizeKey = @"adaptSizeKey";
             self.minimumLineSpacing = IB_HP(self.minimumLineSpacing);
             self.minimumInteritemSpacing = IB_HP(self.minimumInteritemSpacing);
             
-            self.headerReferenceSize = CGSizeMake(IB_HP(self.headerReferenceSize.width), IB_HP(self.headerReferenceSize.width));
+            self.headerReferenceSize = CGSizeMake(IB_HP(self.headerReferenceSize.width), IB_HP(self.headerReferenceSize.height));
             
-            self.footerReferenceSize = CGSizeMake(IB_HP(self.footerReferenceSize.width), IB_HP(self.footerReferenceSize.width));
+            self.footerReferenceSize = CGSizeMake(IB_HP(self.footerReferenceSize.width), IB_HP(self.footerReferenceSize.height));
             
             self.sectionInset = insetsAdaptWithInsets(self.sectionInset);
             

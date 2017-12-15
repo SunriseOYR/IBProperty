@@ -12,6 +12,7 @@
 #import <objc/runtime.h>
 #import "Aspects.h"
 #import "UILabel+ORIBProperty.h"
+#import "NSObject+ORIBProperty.h"
 
 #define IB_PROPORTION  [UIScreen mainScreen].bounds.size.width / 375.f
 #define IB_HP(x)     x * IB_PROPORTION
@@ -24,7 +25,7 @@
 
 
 //适配font
-static UIFont * fontAdaptWithFont(UIFont *font) {
+static inline UIFont * fontAdaptWithFont(UIFont *font) {
     
     UIFontDescriptor *fontDes = font.fontDescriptor;
     NSNumber *fontSize = [fontDes objectForKey:@"NSFontSizeAttribute"];
@@ -32,7 +33,7 @@ static UIFont * fontAdaptWithFont(UIFont *font) {
 }
 
 //适配inset
-static UIEdgeInsets insetsAdaptWithInsets(UIEdgeInsets insets) {
+static inline UIEdgeInsets insetsAdaptWithInsets(UIEdgeInsets insets) {
     
     return UIEdgeInsetsMake(IB_HP(insets.top), IB_HP(insets.left), IB_HP(insets.bottom), IB_HP(insets.right));
 }

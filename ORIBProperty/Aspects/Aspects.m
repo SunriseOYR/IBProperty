@@ -282,6 +282,7 @@ static void aspect_prepareClassAndHookSelector(NSObject *self, SEL selector, NSE
         }
 
         // We use forwardInvocation to hook in.
+        
         class_replaceMethod(klass, selector, aspect_getMsgForwardIMP(self, selector), typeEncoding);
         AspectLog(@"Aspects: Installed hook for -[%@ %@].", klass, NSStringFromSelector(selector));
     }
