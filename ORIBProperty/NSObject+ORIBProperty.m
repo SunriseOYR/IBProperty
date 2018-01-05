@@ -7,6 +7,7 @@
 //
 
 #import "NSObject+ORIBProperty.h"
+#import "ORIBProperty.h"
 
 @interface NSObject()
 

@@ -11,6 +11,9 @@
 
 static const NSString *cornerCircleKey = @"cornerCircleKey";
 
+static const NSString *cornerRadiusKey = @"cornerRadiusKey";
+
+
 @interface UIImage(ORIBProperty)
 
 - (UIImage*)imageAddCornerRadius:(CGFloat)radius andSize:(CGSize)size;
@@ -70,7 +73,18 @@ static const NSString *cornerCircleKey = @"cornerCircleKey";
         if ([self isKindOfClass:[UIImageView class]]) {
             
             [self method_exchangeWithSelector:@selector(setImage:) toSelector:@selector(ib_setImage:)];
-
+            
+            __weak typeof (self) weakSelf = self;
+            
+            [self aspect_hookSelector:@selector(setBounds:) withOptions:AspectPositionAfter usingBlock:^(){
+                
+                __strong typeof(weakSelf) strongSelf = weakSelf;
+                
+                if ([strongSelf isKindOfClass:[UIImageView class]]) {
+                    UIImageView *imageview = (UIImageView *)strongSelf;
+                    imageview.image = imageview.image;
+                }
+            } error:nil];
         }
         
         if ([self isKindOfClass:[UILabel class]]) {
@@ -95,18 +109,14 @@ static const NSString *cornerCircleKey = @"cornerCircleKey";
 
     if (cornerCircle == true) {
         
-        //这个值需要记录，否则先setCornerCircle 再setCornerRadius 会有问题
         objc_setAssociatedObject(self, &cornerCircleKey, @(cornerCircle), OBJC_ASSOCIATION_COPY_NONATOMIC);
         
         self.layer.cornerRadius = self.bounds.size.height / 2.0f;
         
         __weak typeof (self) weakSelf = self;
 
-        
         if ([self isKindOfClass:[UIImageView class]]) {
-            
             [self method_exchangeWithSelector:@selector(setImage:) toSelector:@selector(ib_setImage:)];
-            
         }
         
         if ([self isKindOfClass:[UILabel class]]) {
@@ -137,7 +147,21 @@ static const NSString *cornerCircleKey = @"cornerCircleKey";
 }
 
 - (void)ib_setImage:(UIImage *)image {
-    [self ib_setImage:[image imageAddCornerRadius:self.layer.cornerRadius andSize:self.bounds.size]];
+    
+    UIImage *aImage = image;
+    
+    if (!self.layer.masksToBounds && self.cornerRadius > 0) {
+        
+        CGSize size = self.bounds.size;
+        if (size.width == 0 || size.height == 0) {
+            size = image.size;
+        }
+        aImage = [image imageAddCornerRadius:self.layer.cornerRadius andSize:self.bounds.size];
+        
+        aImage = aImage == nil ? image : aImage;
+    }
+    
+    [self ib_setImage:aImage];
 }
 
 - (BOOL)cornerCircle {

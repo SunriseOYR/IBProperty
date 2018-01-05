@@ -16,7 +16,6 @@ static const NSString *adaptSizeKey = @"adaptSizeKey";
 
 - (void)setAdaptSize:(BOOL)adaptSize {
     
-
     if (adaptSize == true) {
         
         if (self.adaptSize == true && self.numberItemsForRow > 0) {
@@ -63,7 +62,7 @@ static const NSString *adaptSizeKey = @"adaptSizeKey";
     }else {
         CGFloat proportion = self.itemSize.width / self.itemSize.height ;
         
-        CGFloat width = (IB_HP(self.collectionView.bounds.size.width) - self.sectionInset.left - self.sectionInset.right -(self.numberItemsForRow - 1) * self.minimumInteritemSpacing) / self.numberItemsForRow - 0.06;
+        CGFloat width = (IB_HP(self.collectionView.bounds.size.width) - self.sectionInset.left - self.sectionInset.right -(self.numberItemsForRow - 1) * self.minimumInteritemSpacing) / self.numberItemsForRow - 1;
         
         self.itemSize = CGSizeMake(width, width / proportion);
     }
