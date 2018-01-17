@@ -21,6 +21,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/SunriseOYR/IBProperty.git", :tag => "v#{s.version}" }
   s.source_files  = "IBProperty/*"
   s.requires_arc = true
- # s.dependency "Aspects", "~> 1.4.1"
+  s.dependency "Aspects", "~> 1.4.1"
 
 end
