@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.author             = "Oranges and lemons"
   s.social_media_url   = "https://www.jianshu.com/u/80c622a1fe98"
   s.source       = { :git => "https://github.com/SunriseOYR/IBProperty.git", :tag => s.version }
-  s.source_files  = "IBProperty/*.{h,m}"
+  s.source_files  = "IBProperty/*"
   s.requires_arc = true
   s.dependency "Aspects", "~> 1.4.1"
 
