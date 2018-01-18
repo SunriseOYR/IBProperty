@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "IBProperty"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.ios.deployment_target = '7.0'
   s.summary      = "A iOS Kit which would adapt screen by XIB and Storyboard  better， and  use better  for XIB  and Storyboard。"
   #s.description  = <<-DESC
@@ -23,6 +23,5 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.dependency "Aspects"
   s.public_header_files = 'IBProperty/ORIBProperty.h'
-  s.source_files = 'IBProperty/ORIBProperty.h'
 
 end
