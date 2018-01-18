@@ -22,5 +22,7 @@ Pod::Spec.new do |s|
   s.source_files  = "IBProperty/*"
   s.requires_arc = true
   s.dependency "Aspects"
+  s.public_header_files = 'IBProperty/ORIBProperty.h'
+  s.source_files = 'IBProperty/ORIBProperty.h'
 
 end
