@@ -11,9 +11,9 @@
 
 @implementation UIButton (ORIBProperty)
 
-- (void)setAdaptInsets:(BOOL)adaptInsets {
+- (void)setIb_adaptInsets:(BOOL)ib_adaptInsets {
     
-    if (adaptInsets == true) {
+    if (ib_adaptInsets == YES) {
         
         self.contentEdgeInsets = insetsAdaptWithInsets(self.contentEdgeInsets);
         self.titleEdgeInsets = insetsAdaptWithInsets(self.titleEdgeInsets);
@@ -21,19 +21,19 @@
     }
 }
 
-- (BOOL)adaptInsets {
-    return false;
+- (BOOL)ib_adaptInsets {
+    return NO;
 }
 
-- (void)setAdaptFont:(BOOL)adaptFont {
+- (void)setIb_adaptFont:(BOOL)ib_adaptFont {
     
-    if (adaptFont == true) {
-        self.titleLabel.adaptFont = true;
+    if (ib_adaptFont == YES) {
+        self.titleLabel.ib_adaptFont = YES;
     }
 }
 
-- (BOOL)adaptFont {
-    return false;
+- (BOOL)ib_adaptFont {
+    return NO;
 }
 
 

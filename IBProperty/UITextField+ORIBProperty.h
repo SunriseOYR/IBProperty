@@ -12,7 +12,10 @@ IB_DESIGNABLE
 
 @interface UITextField (ORIBProperty)
 
-//字体大小适配
-@property (nonatomic, assign) IBInspectable BOOL adaptFont;
+/*
+ * 根据屏幕的宽度 适配 字体大小
+ * adapt font size by screen width
+ */
+@property (nonatomic, assign) IBInspectable BOOL ib_adaptFont;
 
 @end

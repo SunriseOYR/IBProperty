@@ -9,16 +9,16 @@
 #import "UICollectionViewFlowLayout+ORIBProperty.h"
 #import "ORIBProperty.h"
 
-static const NSString *numberItemsForRowKey = @"numberItemsForRowKey";
-static const NSString *adaptSizeKey = @"adaptSizeKey";
+static const NSString *ib_numberItemsForRowKey = @"ib_numberItemsForRowKey";
+static const NSString *ib_adaptSizeKey = @"ib_adaptSizeKey";
 
 @implementation UICollectionViewFlowLayout (ORIBProperty)
 
-- (void)setAdaptSize:(BOOL)adaptSize {
+- (void)setIb_adaptSize:(BOOL)ib_adaptSize {
     
-    if (adaptSize == true) {
+    if (ib_adaptSize == YES) {
         
-        if (self.adaptSize == true && self.numberItemsForRow > 0) {
+        if (self.ib_adaptSize == YES && self.ib_numberItemsForRow > 0) {
             [self itemSizeAdapt];
         }else {
             self.minimumLineSpacing = IB_HP(self.minimumLineSpacing);
@@ -35,34 +35,34 @@ static const NSString *adaptSizeKey = @"adaptSizeKey";
         
     }
     
-    objc_setAssociatedObject(self, &adaptSizeKey, @(adaptSize), OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, &ib_adaptSizeKey, @(ib_adaptSize), OBJC_ASSOCIATION_COPY_NONATOMIC);
 
 }
 
-- (BOOL)adaptSize {
-    return [objc_getAssociatedObject(self, &adaptSizeKey) boolValue];
+- (BOOL)ib_adaptSize {
+    return [objc_getAssociatedObject(self, &ib_adaptSizeKey) boolValue];
 }
 
-- (void)setNumberItemsForRow:(NSInteger)numberItemsForRow {
+- (void)setIb_numberItemsForRow:(NSInteger)ib_numberItemsForRow {
     
-    objc_setAssociatedObject(self, &numberItemsForRowKey, @(numberItemsForRow), OBJC_ASSOCIATION_COPY_NONATOMIC);
-    self.adaptSize = true;
+    objc_setAssociatedObject(self, &ib_numberItemsForRowKey, @(ib_numberItemsForRow), OBJC_ASSOCIATION_COPY_NONATOMIC);
+    self.ib_adaptSize = YES;
 
 }
 
-- (NSInteger)numberItemsForRow {
-    return [objc_getAssociatedObject(self, &numberItemsForRowKey) integerValue];
+- (NSInteger)ib_numberItemsForRow {
+    return [objc_getAssociatedObject(self, &ib_numberItemsForRowKey) integerValue];
 }
 
 - (void)itemSizeAdapt {
     
-    if (self.numberItemsForRow == 0) {
+    if (self.ib_numberItemsForRow == 0) {
         
         self.itemSize = CGSizeMake(IB_HP(self.itemSize.width), IB_HP(self.itemSize.height));
     }else {
         CGFloat proportion = self.itemSize.width / self.itemSize.height ;
         
-        CGFloat width = (IB_HP(self.collectionView.bounds.size.width) - self.sectionInset.left - self.sectionInset.right -(self.numberItemsForRow - 1) * self.minimumInteritemSpacing) / self.numberItemsForRow - 1;
+        CGFloat width = (IB_HP(self.collectionView.bounds.size.width) - self.sectionInset.left - self.sectionInset.right -(self.ib_numberItemsForRow - 1) * self.minimumInteritemSpacing) / self.ib_numberItemsForRow - 1;
         
         self.itemSize = CGSizeMake(width, width / proportion);
     }

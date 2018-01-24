@@ -11,15 +11,15 @@
 
 @implementation UITextView (ORIBProperty)
 
-- (void)setAdaptFont:(BOOL)adaptFont {
+- (void)setIb_adaptFont:(BOOL)ib_adaptFont {
     
-    if (adaptFont == true) {
+    if (ib_adaptFont == YES) {
         self.font = fontAdaptWithFont(self.font);
     }
 }
 
-- (BOOL)adaptFont {
-    return false;
+- (BOOL)ib_adaptFont {
+    return NO;
 }
 
 

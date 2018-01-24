@@ -12,14 +12,23 @@ IB_DESIGNABLE
 
 @interface UILabel (ORIBProperty)
 
-//字体大小适配
-@property (nonatomic, assign) IBInspectable BOOL adaptFont;
+/*
+ * 根据屏幕的宽度 适配 字体大小
+ * adapt font size by screen width
+ */
+@property (nonatomic, assign) IBInspectable BOOL ib_adaptFont;
 
-//下划线
-@property (nonatomic, assign) IBInspectable BOOL underLine;
+/*
+ * 给文字添加 下划线
+ * add a underline for text
+ */
+@property (nonatomic, assign) IBInspectable BOOL ib_underLine;
 
-//中间横线
-@property (nonatomic, assign) IBInspectable BOOL middleLine;
+/*
+ * 给文字添加中间横线
+ * add a middleLine for text
+ */
+@property (nonatomic, assign) IBInspectable BOOL ib_middleLine;
 
 
 

@@ -11,20 +11,20 @@
 
 @implementation UILabel (ORIBProperty)
 
-- (void)setAdaptFont:(BOOL)adaptFont {
+- (void)setIb_adaptFont:(BOOL)ib_adaptFont {
     
-    if (adaptFont == true) {
+    if (ib_adaptFont == YES) {
         self.font = fontAdaptWithFont(self.font);
     }
 }
 
-- (BOOL)adaptFont {
-    return false;
+- (BOOL)ib_adaptFont {
+    return NO;
 }
 
-- (void)setUnderLine:(BOOL)underLine {
+- (void)setIb_underLine:(BOOL)ib_underLine {
     
-    if (underLine == true) {
+    if (ib_underLine == YES) {
         
         [self setAttributedWirhAttributeName:NSUnderlineStyleAttributeName];
         
@@ -38,13 +38,13 @@
     }
 }
 
-- (BOOL)underLine {
-    return false;
+- (BOOL)ib_underLine {
+    return NO;
 }
 
-- (void)setMiddleLine:(BOOL)middleLine {
+- (void)setIb_middleLine:(BOOL)ib_middleLine {
     
-    if (middleLine == true) {
+    if (ib_middleLine == YES) {
         
         [self setAttributedWirhAttributeName:NSStrikethroughStyleAttributeName];
         
@@ -58,8 +58,8 @@
     }
 }
 
-- (BOOL)middleLine {
-    return false;
+- (BOOL)ib_middleLine {
+    return NO;
 }
 
 - (void)setAttributedWirhAttributeName:(NSString *)key {

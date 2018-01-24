@@ -9,20 +9,20 @@
 #import "UIView+ORIBProperty.h"
 #import "ORIBProperty.h"
 
-static const NSString *cornerCircleKey = @"cornerCircleKey";
+static const NSString *ib_cornerCircleKey = @"ib_cornerCircleKey";
 
-static const NSString *cornerRadiusKey = @"cornerRadiusKey";
+static const NSString *ib_cornerRadiusKey = @"ib_cornerRadiusKey";
 
 
 @interface UIImage(ORIBProperty)
 
-- (UIImage*)imageAddCornerRadius:(CGFloat)radius andSize:(CGSize)size;
+- (UIImage*)imageAddib_cornerRadius:(CGFloat)radius andSize:(CGSize)size;
 
 @end
 
 @implementation UIImage(ORIBProperty)
 
-- (UIImage*)imageAddCornerRadius:(CGFloat)radius andSize:(CGSize)size{
+- (UIImage*)imageAddib_cornerRadius:(CGFloat)radius andSize:(CGSize)size{
     CGRect rect = CGRectMake(0, 0, size.width, size.height);
     
     UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
@@ -43,32 +43,32 @@ static const NSString *cornerRadiusKey = @"cornerRadiusKey";
 
 #pragma mark -- border
 
-- (void)setBorderWidth:(CGFloat)borderWidth {
-    if (borderWidth < 0) {
+- (void)setIb_borderWidth:(CGFloat)ib_borderWidth {
+    if (ib_borderWidth < 0) {
         return;
     }
-    self.layer.borderWidth = borderWidth;
+    self.layer.borderWidth = ib_borderWidth;
 }
 
-- (CGFloat)borderWidth {
+- (CGFloat)ib_borderWidth {
     return self.layer.borderWidth;
 }
 
-- (void)setBorderColor:(UIColor *)borderColor {
-    self.layer.borderColor = borderColor.CGColor;
+- (void)setIb_borderColor:(UIColor *)ib_borderColor {
+    self.layer.borderColor = ib_borderColor.CGColor;
 }
 
-- (UIColor *)borderColor {
+- (UIColor *)ib_borderColor {
     return nil;
 }
 
-#pragma mark -- cornerRadius
+#pragma mark -- ib_cornerRadius
 
-- (void)setCornerRadius:(CGFloat)cornerRadius {
+- (void)setIb_cornerRadius:(CGFloat)ib_cornerRadius {
     
-    if (self.cornerCircle == false) {
+    if (self.ib_cornerCircle == NO) {
         
-        self.layer.cornerRadius = cornerRadius;
+        self.layer.cornerRadius = ib_cornerRadius;
         
         if ([self isKindOfClass:[UIImageView class]]) {
             
@@ -101,15 +101,15 @@ static const NSString *cornerRadiusKey = @"cornerRadiusKey";
     }
 }
 
-- (CGFloat)cornerRadius {
+- (CGFloat)ib_cornerRadius {
     return self.layer.cornerRadius;
 }
 
-- (void)setCornerCircle:(BOOL)cornerCircle {
+- (void)setIb_cornerCircle:(BOOL)ib_cornerCircle {
 
-    if (cornerCircle == true) {
+    if (ib_cornerCircle == YES) {
         
-        objc_setAssociatedObject(self, &cornerCircleKey, @(cornerCircle), OBJC_ASSOCIATION_COPY_NONATOMIC);
+        objc_setAssociatedObject(self, &ib_cornerCircleKey, @(ib_cornerCircle), OBJC_ASSOCIATION_COPY_NONATOMIC);
         
         self.layer.cornerRadius = self.bounds.size.height / 2.0f;
         
@@ -150,13 +150,13 @@ static const NSString *cornerRadiusKey = @"cornerRadiusKey";
     
     UIImage *aImage = image;
     
-    if (!self.layer.masksToBounds && self.cornerRadius > 0) {
+    if (!self.layer.masksToBounds && self.ib_cornerRadius > 0) {
         
         CGSize size = self.bounds.size;
         if (size.width == 0 || size.height == 0) {
             size = image.size;
         }
-        aImage = [image imageAddCornerRadius:self.layer.cornerRadius andSize:self.bounds.size];
+        aImage = [image imageAddib_cornerRadius:self.layer.cornerRadius andSize:self.bounds.size];
         
         aImage = aImage == nil ? image : aImage;
     }
@@ -164,41 +164,41 @@ static const NSString *cornerRadiusKey = @"cornerRadiusKey";
     [self ib_setImage:aImage];
 }
 
-- (BOOL)cornerCircle {
-    return objc_getAssociatedObject(self, &cornerCircleKey);
+- (BOOL)ib_cornerCircle {
+    return objc_getAssociatedObject(self, &ib_cornerCircleKey);
 }
 
 #pragma mark -- shadow
 
-- (void)setShadowColor:(UIColor *)shadowColor {
-    self.layer.shadowColor = shadowColor.CGColor;
+- (void)setIb_shadowColor:(UIColor *)ib_shadowColor {
+    self.layer.shadowColor = ib_shadowColor.CGColor;
 }
 
-- (UIColor *)shadowColor {
+- (UIColor *)ib_shadowColor {
     return [UIColor colorWithCGColor:self.layer.shadowColor];
 }
 
-- (void)setShadowOffset:(CGSize)shadowOffset {
-    self.layer.shadowOffset = shadowOffset;
+- (void)setIb_shadowOffset:(CGSize)ib_shadowOffset {
+    self.layer.shadowOffset = ib_shadowOffset;
 }
 
-- (CGSize)shadowOffset {
+- (CGSize)ib_shadowOffset {
     return self.layer.shadowOffset;
 }
 
-- (void)setShadowOpacity:(CGFloat)shadowOpacity {
-    self.layer.shadowOpacity = shadowOpacity;
+- (void)setIb_shadowOpacity:(CGFloat)ib_shadowOpacity {
+    self.layer.shadowOpacity = ib_shadowOpacity;
 }
 
-- (CGFloat)shadowOpacity {
+- (CGFloat)ib_shadowOpacity {
     return self.layer.shadowOpacity;
 }
 
-- (void)setShadowRadius:(CGFloat)shadowRadius {
-    self.layer.shadowRadius = shadowRadius;
+- (void)setIb_shadowRadius:(CGFloat)ib_shadowRadius {
+    self.layer.shadowRadius = ib_shadowRadius;
 }
 
-- (CGFloat)shadowRadius {
+- (CGFloat)ib_shadowRadius {
     return self.layer.shadowRadius;
 }
 

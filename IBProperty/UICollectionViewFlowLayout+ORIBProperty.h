@@ -12,9 +12,13 @@
 
 /* itemSize、minimumLineSpacing、minimumInteritemSpacing、headerReferenceSize、footerReferenceSize、sectionInset
  */
-@property (nonatomic, assign) IBInspectable BOOL adaptSize;
+@property (nonatomic, assign) IBInspectable BOOL ib_adaptSize;
 
-//每行显示的item个数 为自动设置 adaptSize 为true
-@property (nonatomic, assign) IBInspectable NSInteger numberItemsForRow;
+
+/*
+ * collectionView每行显示的item的个数  将自动设置 ib_adaptSize 为YES
+ * the number of items at row in collectionView, ib_adaptSize would be YES
+ */
+@property (nonatomic, assign) IBInspectable NSInteger ib_numberItemsForRow;
 
 @end
