@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uPa-aX-Onl">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Jf-Tj-dFf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自定义导航栏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opP-D5-6qk">
+                                        <rect key="frame" x="132.5" y="28" width="110.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96S-yD-dk9">
+                                        <rect key="frame" x="314" y="22.5" width="49" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="下一页">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ib_reClickEnabled" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="AEk-XO-Dzo" kind="show" id="KdY-DQ-XUO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.4039215686" green="0.68235294120000001" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="96S-yD-dk9" firstAttribute="centerY" secondItem="opP-D5-6qk" secondAttribute="centerY" id="2Lm-lg-GeX"/>
+                                    <constraint firstItem="opP-D5-6qk" firstAttribute="top" secondItem="0Jf-Tj-dFf" secondAttribute="top" constant="28" id="9Po-JO-6HG">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ib_adaptXTopConstant" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstItem="opP-D5-6qk" firstAttribute="centerX" secondItem="0Jf-Tj-dFf" secondAttribute="centerX" id="DpV-TX-MHR"/>
+                                    <constraint firstAttribute="height" constant="64" id="dTk-Hy-6zm">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ib_adaptXTopConstant" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstAttribute="trailing" secondItem="96S-yD-dk9" secondAttribute="trailing" constant="12" id="pqL-qj-8n0"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="ib_borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Lz7-DT-IRW">
+                                <rect key="frame" x="20" y="115" width="335" height="178.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Lz7-DT-IRW" secondAttribute="height" multiplier="15:8" id="2Ov-v0-gLK"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="ib_cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="ib_borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="ib_shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="ib_borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="ib_shadowOffset">
+                                        <size key="value" width="4" height="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="ib_shadowOpacity">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="ib_shadowRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="underline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zze-cA-OUh">
+                                <rect key="frame" x="20" y="323" width="71.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ib_underLine" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ib_adaptFont" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="middleline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDG-ZC-7ox">
+                                <rect key="frame" x="20" y="352" width="78.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ib_adaptFont" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ib_underLine" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ib_middleLine" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsi-hS-Z3a">
+                                <rect key="frame" x="132.5" y="537" width="110" height="110"/>
+                                <color key="backgroundColor" red="0.4039215686" green="0.68235294120000001" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="a0G-gL-u4i">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ib_adaptConstant" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                    <constraint firstAttribute="width" secondItem="dsi-hS-Z3a" secondAttribute="height" multiplier="1:1" id="l7V-lG-Hy4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="限制重复点击">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ib_cornerCircle" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ib_adaptFont" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ib_reClickEnabled" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="action_reClickTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wfZ-EQ-ufF"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FTV-Ll-a3v">
+                                <rect key="frame" x="20" y="385" width="343" height="144"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="ib_placeholder" value="这是一个textView placeholder"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="ib_borderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="ib_borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dsi-hS-Z3a" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="08s-Ya-xQK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lz7-DT-IRW" secondAttribute="trailing" constant="20" id="5Ys-Y8-Fsg"/>
+                            <constraint firstItem="0Jf-Tj-dFf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ChM-NX-dfB"/>
+                            <constraint firstItem="Lz7-DT-IRW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="IaN-0b-rpP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FTV-Ll-a3v" secondAttribute="trailing" constant="12" id="TZU-7G-RMV"/>
+                            <constraint firstItem="Lz7-DT-IRW" firstAttribute="top" secondItem="0Jf-Tj-dFf" secondAttribute="bottom" constant="51" id="Up1-D1-wo6"/>
+                            <constraint firstItem="FTV-Ll-a3v" firstAttribute="top" secondItem="qDG-ZC-7ox" secondAttribute="bottom" constant="12" id="ZRa-UL-rTj"/>
+                            <constraint firstItem="FTV-Ll-a3v" firstAttribute="leading" secondItem="qDG-ZC-7ox" secondAttribute="leading" id="Zaj-o8-LSL"/>
+                            <constraint firstItem="qDG-ZC-7ox" firstAttribute="leading" secondItem="zze-cA-OUh" secondAttribute="leading" id="dgr-v5-5AP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dsi-hS-Z3a" secondAttribute="bottom" constant="20" id="eHK-MQ-2nN"/>
+                            <constraint firstItem="dsi-hS-Z3a" firstAttribute="top" secondItem="FTV-Ll-a3v" secondAttribute="bottom" constant="8" id="ina-Z4-azc"/>
+                            <constraint firstItem="zze-cA-OUh" firstAttribute="leading" secondItem="Lz7-DT-IRW" secondAttribute="leading" id="jr1-kM-2Za"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Jf-Tj-dFf" secondAttribute="trailing" id="l7w-2F-uxi"/>
+                            <constraint firstItem="zze-cA-OUh" firstAttribute="top" secondItem="Lz7-DT-IRW" secondAttribute="bottom" constant="29.5" id="r6n-qK-TwD"/>
+                            <constraint firstItem="qDG-ZC-7ox" firstAttribute="top" secondItem="zze-cA-OUh" secondAttribute="bottom" constant="8" id="x58-EA-8Gi"/>
+                            <constraint firstItem="0Jf-Tj-dFf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="yb1-wb-jKY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xvc-ii-NVJ"/>
+                    <connections>
+                        <outlet property="textView" destination="FTV-Ll-a3v" id="6cm-gY-uUi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="204" y="69.715142428785612"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="8Qi-sx-jVH">
+            <objects>
+                <collectionViewController id="AEk-XO-Dzo" customClass="IBCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Bpu-0M-glf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5OI-Or-j76">
+                            <size key="itemSize" width="120" height="180"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="50" height="30"/>
+                            <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="ib_numberItemsForRow">
+                                    <integer key="value" value="4"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellIdf" id="qsA-yt-ppk">
+                                <rect key="frame" x="10" y="50" width="120" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="120" height="180"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ani.png" translatesAutoresizingMaskIntoConstraints="NO" id="mr5-g9-4nC">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="180"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="mr5-g9-4nC" firstAttribute="leading" secondItem="qsA-yt-ppk" secondAttribute="leading" id="DhN-Qu-mqE"/>
+                                    <constraint firstItem="mr5-g9-4nC" firstAttribute="top" secondItem="qsA-yt-ppk" secondAttribute="top" id="NQ0-Ms-4L1"/>
+                                    <constraint firstAttribute="trailing" secondItem="mr5-g9-4nC" secondAttribute="trailing" id="SXF-n4-Ij4"/>
+                                    <constraint firstAttribute="bottom" secondItem="mr5-g9-4nC" secondAttribute="bottom" id="jhm-Mx-HxF"/>
+                                </constraints>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headerIdf" id="pUL-iQ-Gut">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collection View Flow Layout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDC-q6-pz8">
+                                    <rect key="frame" x="80.5" y="15" width="214" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="ib_adaptFont" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="nDC-q6-pz8" firstAttribute="centerX" secondItem="pUL-iQ-Gut" secondAttribute="centerX" id="lqx-8r-C3i"/>
+                                <constraint firstItem="nDC-q6-pz8" firstAttribute="centerY" secondItem="pUL-iQ-Gut" secondAttribute="centerY" id="mRx-n5-jCV"/>
+                            </constraints>
+                        </collectionReusableView>
+                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="footerIdf" id="0w0-4A-0gP">
+                            <rect key="frame" x="0.0" y="230" width="375" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---IBProperty---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtC-Od-oz9">
+                                    <rect key="frame" x="131" y="6" width="114" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="ib_adaptFont" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="gtC-Od-oz9" firstAttribute="centerY" secondItem="0w0-4A-0gP" secondAttribute="centerY" id="3ad-5L-lnK"/>
+                                <constraint firstItem="gtC-Od-oz9" firstAttribute="centerX" secondItem="0w0-4A-0gP" secondAttribute="centerX" id="ldA-Nq-QMp"/>
+                            </constraints>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="AEk-XO-Dzo" id="51c-qb-HSy"/>
+                            <outlet property="delegate" destination="AEk-XO-Dzo" id="6he-rk-jOE"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ARB-r1-hdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="972" y="69.715142428785612"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9Iw-Lo-29I">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uPa-aX-Onl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fNK-rP-aV3">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="0XI-lk-Usl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h1v-0v-JA6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-671" y="70"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="2.jpg" width="720" height="450"/>
+        <image name="ani.png" width="299" height="390"/>
+    </resources>
+</document>
