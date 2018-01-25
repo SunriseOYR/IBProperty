@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+IB_DESIGNABLE
+
 @interface UIControl (ORIBProperty)
 
 /*

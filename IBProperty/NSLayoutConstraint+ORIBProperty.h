@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+IB_DESIGNABLE
+
 @interface NSLayoutConstraint (ORIBProperty)
 
 /*
@@ -17,7 +19,7 @@
 @property (nonatomic, assign) IBInspectable BOOL ib_adaptConstant;
 
 /*
- * 适配导航栏高度，若为YES constant将不会适配比例，而是在iPhone X 上加上24pt, 常用于 为自定义导航栏的高度约束以及子视图布局添加约束
+ * 适配导航栏高度，若为YES constant将不会适配比例，而是在iPhone X 上加上24pt, 常用于 为自定义导航栏的子视图添加约束
  * constant would not adapt but add 24px in iPhone X
  */
 @property (nonatomic, assign) IBInspectable BOOL ib_adaptXTopConstant;

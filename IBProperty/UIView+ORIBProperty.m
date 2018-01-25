@@ -23,8 +23,8 @@ static const NSString *ib_cornerRadiusKey = @"ib_cornerRadiusKey";
 @implementation UIImage(ORIBProperty)
 
 - (UIImage*)imageAddib_cornerRadius:(CGFloat)radius andSize:(CGSize)size{
-    CGRect rect = CGRectMake(0, 0, size.width, size.height);
     
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
     UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     UIBezierPath * path = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(radius, radius)];
@@ -59,7 +59,7 @@ static const NSString *ib_cornerRadiusKey = @"ib_cornerRadiusKey";
 }
 
 - (UIColor *)ib_borderColor {
-    return nil;
+    return [UIColor colorWithCGColor:self.layer.borderColor];
 }
 
 #pragma mark -- ib_cornerRadius
@@ -113,8 +113,6 @@ static const NSString *ib_cornerRadiusKey = @"ib_cornerRadiusKey";
         
         self.layer.cornerRadius = self.bounds.size.height / 2.0f;
         
-        __weak typeof (self) weakSelf = self;
-
         if ([self isKindOfClass:[UIImageView class]]) {
             [self method_exchangeWithSelector:@selector(setImage:) toSelector:@selector(ib_setImage:)];
         }
@@ -130,6 +128,8 @@ static const NSString *ib_cornerRadiusKey = @"ib_cornerRadiusKey";
             }
         }
         
+        __weak typeof (self) weakSelf = self;
+
         [self aspect_hookSelector:@selector(setBounds:) withOptions:AspectPositionAfter usingBlock:^(){
             
             __strong typeof(weakSelf) strongSelf = weakSelf;

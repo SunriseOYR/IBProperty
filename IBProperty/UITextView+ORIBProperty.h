@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+IB_DESIGNABLE
+
 @interface UITextView (ORIBProperty)
 
 /*
@@ -15,6 +17,12 @@
  * adapt font size by screen width
  */
 @property (nonatomic, assign) IBInspectable BOOL ib_adaptFont;
+
+/*
+ * 类似于UITextField的placeholder
+ * like UITextField's placeholder
+ */
+@property (nonatomic, copy) IBInspectable NSString * ib_placeholder;
 
 
 @end
