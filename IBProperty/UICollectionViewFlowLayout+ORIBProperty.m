@@ -48,6 +48,10 @@ static const NSString *ib_adaptSizeKey = @"ib_adaptSizeKey";
     objc_setAssociatedObject(self, &ib_numberItemsForRowKey, @(ib_numberItemsForRow), OBJC_ASSOCIATION_COPY_NONATOMIC);
     self.ib_adaptSize = YES;
 
+    [self.collectionView aspect_hookSelector:@selector(setBounds:) withOptions:AspectPositionAfter usingBlock:^{
+        self.ib_adaptSize = YES;
+    } error:nil];
+    
 }
 
 - (NSInteger)ib_numberItemsForRow {
@@ -61,8 +65,7 @@ static const NSString *ib_adaptSizeKey = @"ib_adaptSizeKey";
         self.itemSize = CGSizeMake(IB_HP(self.itemSize.width), IB_HP(self.itemSize.height));
     }else {
         CGFloat proportion = self.itemSize.width / self.itemSize.height ;
-        
-        CGFloat width = (IB_HP(self.collectionView.bounds.size.width) - self.sectionInset.left - self.sectionInset.right -(self.ib_numberItemsForRow - 1) * self.minimumInteritemSpacing) / self.ib_numberItemsForRow - 1;
+        CGFloat width = (self.collectionView.bounds.size.width - self.sectionInset.left - self.sectionInset.right -(self.ib_numberItemsForRow - 1) * self.minimumInteritemSpacing) / self.ib_numberItemsForRow - 1;
         
         self.itemSize = CGSizeMake(width, width / proportion);
     }

@@ -65,7 +65,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Lz7-DT-IRW">
-                                <rect key="frame" x="20" y="115" width="335" height="178.5"/>
+                                <rect key="frame" x="20" y="84" width="335" height="178.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Lz7-DT-IRW" secondAttribute="height" multiplier="15:8" id="2Ov-v0-gLK"/>
                                 </constraints>
@@ -94,7 +94,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="underline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zze-cA-OUh">
-                                <rect key="frame" x="20" y="323" width="71.5" height="21"/>
+                                <rect key="frame" x="20" y="292" width="71.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -104,7 +104,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="middleline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDG-ZC-7ox">
-                                <rect key="frame" x="20" y="352" width="78.5" height="21"/>
+                                <rect key="frame" x="20" y="321" width="78.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -115,17 +115,17 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsi-hS-Z3a">
-                                <rect key="frame" x="132.5" y="537" width="110" height="110"/>
+                                <rect key="frame" x="137.5" y="547" width="100" height="100"/>
                                 <color key="backgroundColor" red="0.4039215686" green="0.68235294120000001" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="110" id="a0G-gL-u4i">
+                                    <constraint firstAttribute="width" constant="100" id="a0G-gL-u4i">
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="ib_adaptConstant" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </constraint>
                                     <constraint firstAttribute="width" secondItem="dsi-hS-Z3a" secondAttribute="height" multiplier="1:1" id="l7V-lG-Hy4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="限制重复点击">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -139,9 +139,9 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FTV-Ll-a3v">
-                                <rect key="frame" x="20" y="385" width="343" height="144"/>
+                                <rect key="frame" x="20" y="362" width="343" height="155"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="ib_placeholder" value="这是一个textView placeholder"/>
@@ -151,6 +151,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="ib_borderWidth">
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ib_adaptFont" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </textView>
                         </subviews>
@@ -161,12 +162,12 @@
                             <constraint firstItem="0Jf-Tj-dFf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ChM-NX-dfB"/>
                             <constraint firstItem="Lz7-DT-IRW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="IaN-0b-rpP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FTV-Ll-a3v" secondAttribute="trailing" constant="12" id="TZU-7G-RMV"/>
-                            <constraint firstItem="Lz7-DT-IRW" firstAttribute="top" secondItem="0Jf-Tj-dFf" secondAttribute="bottom" constant="51" id="Up1-D1-wo6"/>
-                            <constraint firstItem="FTV-Ll-a3v" firstAttribute="top" secondItem="qDG-ZC-7ox" secondAttribute="bottom" constant="12" id="ZRa-UL-rTj"/>
+                            <constraint firstItem="Lz7-DT-IRW" firstAttribute="top" secondItem="0Jf-Tj-dFf" secondAttribute="bottom" constant="20" id="Up1-D1-wo6"/>
+                            <constraint firstItem="FTV-Ll-a3v" firstAttribute="top" secondItem="qDG-ZC-7ox" secondAttribute="bottom" constant="20" id="ZRa-UL-rTj"/>
                             <constraint firstItem="FTV-Ll-a3v" firstAttribute="leading" secondItem="qDG-ZC-7ox" secondAttribute="leading" id="Zaj-o8-LSL"/>
                             <constraint firstItem="qDG-ZC-7ox" firstAttribute="leading" secondItem="zze-cA-OUh" secondAttribute="leading" id="dgr-v5-5AP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dsi-hS-Z3a" secondAttribute="bottom" constant="20" id="eHK-MQ-2nN"/>
-                            <constraint firstItem="dsi-hS-Z3a" firstAttribute="top" secondItem="FTV-Ll-a3v" secondAttribute="bottom" constant="8" id="ina-Z4-azc"/>
+                            <constraint firstItem="dsi-hS-Z3a" firstAttribute="top" secondItem="FTV-Ll-a3v" secondAttribute="bottom" constant="30" id="ina-Z4-azc"/>
                             <constraint firstItem="zze-cA-OUh" firstAttribute="leading" secondItem="Lz7-DT-IRW" secondAttribute="leading" id="jr1-kM-2Za"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Jf-Tj-dFf" secondAttribute="trailing" id="l7w-2F-uxi"/>
                             <constraint firstItem="zze-cA-OUh" firstAttribute="top" secondItem="Lz7-DT-IRW" secondAttribute="bottom" constant="29.5" id="r6n-qK-TwD"/>
