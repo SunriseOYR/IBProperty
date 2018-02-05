@@ -559,27 +559,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0BDB993932BFDFF32EC64EBCD7960559 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D09E570D18068022A9420BCC79255FE8 /* IBProperty.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/IBProperty/IBProperty-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 		11C91BD1F97D2B7CC58A4403705DA620 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 555A377603D25AF2EFF0E399AB91CC74 /* Pods-IBPropertyDemoUITests.release.xcconfig */;
@@ -725,6 +704,27 @@
 			};
 			name = Debug;
 		};
+		445784D473D22F92AA4F3FE2AFAB7EFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D09E570D18068022A9420BCC79255FE8 /* IBProperty.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/IBProperty/IBProperty-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		6E964B9E04FE2E0D5B4C4A45DF8D1564 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 346774F2025293D1C10C66E060134128 /* Aspects.xcconfig */;
@@ -746,7 +746,7 @@
 			};
 			name = Debug;
 		};
-		740C66BB5304657DD6CE258EDDCAF09B /* Release */ = {
+		76DBA996070BC63BA08A83497DA3307F /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D09E570D18068022A9420BCC79255FE8 /* IBProperty.xcconfig */;
 			buildSettings = {
@@ -755,7 +755,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/IBProperty/IBProperty-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -889,8 +889,8 @@
 		0ACBFDA2BD0268E80474393CB4000C0B /* Build configuration list for PBXNativeTarget "IBProperty" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0BDB993932BFDFF32EC64EBCD7960559 /* Debug */,
-				740C66BB5304657DD6CE258EDDCAF09B /* Release */,
+				445784D473D22F92AA4F3FE2AFAB7EFF /* Debug */,
+				76DBA996070BC63BA08A83497DA3307F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -35,24 +35,24 @@ static NSInteger const effectViewTag = 2018;
     return  NO;
 }
 
-- (void)setIb_effectAlpha:(CGFloat)ib_effectAlpha {
-    if (ib_effectAlpha > 0) {
+- (void)setIb_effectOpacity:(CGFloat)ib_effectOpacity {
+    if (ib_effectOpacity > 0) {
         
-        CGFloat alpha = ib_effectAlpha > 1 ? 1 : ib_effectAlpha;
+        CGFloat alpha = ib_effectOpacity > 1 ? 1 : ib_effectOpacity;
         
         alpha = (1- alpha) * 0.4 + alpha;
         
-        NSLog(@"asda %lf", alpha);
+//        NSLog(@"asda %lf", alpha);
         
-        objc_setAssociatedObject(self, @selector(setIb_effectAlpha:), @(alpha), OBJC_ASSOCIATION_COPY_NONATOMIC);
+        objc_setAssociatedObject(self, @selector(setIb_effectOpacity:), @(alpha), OBJC_ASSOCIATION_COPY_NONATOMIC);
     
         UIVisualEffectView *effectView = [self viewWithTag:effectViewTag];
         effectView.alpha = alpha;
     }
 }
 
-- (CGFloat)ib_effectAlpha {
-    return [objc_getAssociatedObject(self, @selector(setIb_effectAlpha:)) doubleValue];
+- (CGFloat)ib_effectOpacity {
+    return [objc_getAssociatedObject(self, @selector(setIb_effectOpacity:)) doubleValue];
 }
 
 
@@ -80,7 +80,7 @@ static NSInteger const effectViewTag = 2018;
     UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
     effectView.frame = self.bounds;
     effectView.tag = effectViewTag;
-    CGFloat alpha = self.ib_effectAlpha > 0 ? self.ib_effectAlpha : 0.5;
+    CGFloat alpha = self.ib_effectOpacity > 0 ? self.ib_effectOpacity : 0.5;
     effectView.alpha = alpha;
     [self addSubview:effectView];
     effectView.ib_cornerRadius = self.ib_cornerRadius;

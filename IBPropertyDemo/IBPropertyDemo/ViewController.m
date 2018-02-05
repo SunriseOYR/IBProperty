@@ -21,6 +21,10 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+- (IBAction)action_back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (IBAction)action_reClickTest:(id)sender {
     
     [self.view endEditing:YES];

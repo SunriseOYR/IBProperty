@@ -12,11 +12,12 @@ IB_DESIGNABLE
 
 @interface UIImageView (ORIBProperty)
 
-//border
+//Effect
 @property(nonatomic, assign) IBInspectable BOOL  ib_darkEffect;
 @property(nonatomic, assign) IBInspectable BOOL  ib_lightEffect;
 
-@property(nonatomic, assign) IBInspectable CGFloat  ib_effectAlpha;
+//opacity of effect 0 - 1
+@property(nonatomic, assign) IBInspectable CGFloat  ib_effectOpacity;
 
 
 @end

@@ -16,8 +16,6 @@
 		4D8781912016CA8900ED0F9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8781902016CA8900ED0F9A /* main.m */; };
 		4D87819B2016CA8900ED0F9A /* IBPropertyDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D87819A2016CA8900ED0F9A /* IBPropertyDemoTests.m */; };
 		4D8781A62016CA8900ED0F9A /* IBPropertyDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8781A52016CA8900ED0F9A /* IBPropertyDemoUITests.m */; };
-		4DAD6A382018697B00E6A9CE /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4DAD6A372018697A00E6A9CE /* 2.jpg */; };
-		4DAD6A3A20187F7C00E6A9CE /* ani.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAD6A3920187F7C00E6A9CE /* ani.png */; };
 		4DAD6A3D2018818500E6A9CE /* IBCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DAD6A3C2018818500E6A9CE /* IBCollectionViewController.m */; };
 		7882B692C8B2080C351DF13E /* libPods-IBPropertyDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 011D207571694E72724C97F1 /* libPods-IBPropertyDemo.a */; };
 		EF1EBA10B9A9965F5E759125 /* libPods-IBPropertyDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00939ABA8F88637C99D2F532 /* libPods-IBPropertyDemoTests.a */; };
@@ -61,8 +59,6 @@
 		4D8781A12016CA8900ED0F9A /* IBPropertyDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IBPropertyDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8781A52016CA8900ED0F9A /* IBPropertyDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBPropertyDemoUITests.m; sourceTree = "<group>"; };
 		4D8781A72016CA8900ED0F9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4DAD6A372018697A00E6A9CE /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
-		4DAD6A3920187F7C00E6A9CE /* ani.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ani.png; sourceTree = "<group>"; };
 		4DAD6A3B2018818500E6A9CE /* IBCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBCollectionViewController.h; sourceTree = "<group>"; };
 		4DAD6A3C2018818500E6A9CE /* IBCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBCollectionViewController.m; sourceTree = "<group>"; };
 		706A5C4CFB7DD55572A039EA /* Pods-IBPropertyDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IBPropertyDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IBPropertyDemoUITests/Pods-IBPropertyDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,8 +121,6 @@
 		4D8781802016CA8900ED0F9A /* IBPropertyDemo */ = {
 			isa = PBXGroup;
 			children = (
-				4DAD6A372018697A00E6A9CE /* 2.jpg */,
-				4DAD6A3920187F7C00E6A9CE /* ani.png */,
 				4D8781812016CA8900ED0F9A /* AppDelegate.h */,
 				4D8781822016CA8900ED0F9A /* AppDelegate.m */,
 				4D8781842016CA8900ED0F9A /* ViewController.h */,
@@ -300,8 +294,6 @@
 			files = (
 				4D87818E2016CA8900ED0F9A /* LaunchScreen.storyboard in Resources */,
 				4D87818B2016CA8900ED0F9A /* Assets.xcassets in Resources */,
-				4DAD6A382018697B00E6A9CE /* 2.jpg in Resources */,
-				4DAD6A3A20187F7C00E6A9CE /* ani.png in Resources */,
 				4D8781892016CA8900ED0F9A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
