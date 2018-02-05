@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "IBProperty"
-  s.version      = "1.1.4"
+  s.version      = "1.1.5"
   s.ios.deployment_target = '8.0'
   s.summary      = "A iOS Kit which would adapt screen by XIB and Storyboard  better， and  use better  for XIB  and Storyboard。"
   #s.description  = <<-DESC
