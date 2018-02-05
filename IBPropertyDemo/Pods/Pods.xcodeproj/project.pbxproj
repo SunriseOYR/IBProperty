@@ -7,17 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		081B7B930D3B033546BCA077894EFC6B /* UIButton+ORIBProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = EDA5DC211B4986CB12ABA961FBED609B /* UIButton+ORIBProperty.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0B3E44C23F2F3B483702E8BDF87E0A76 /* UITextView+ORIBProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 14546A274FBDA8890AAC8D7C4FE84973 /* UITextView+ORIBProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0CEF0C8769662CEC14649C5FD2CBE0EB /* Aspects-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC84545EA5B253FFC135182E4A9CA78 /* Aspects-dummy.m */; };
-		14CBBD00CE475CE04E97D2CDE9DEDA47 /* UIView+ORIBProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 61216C1CFAED90F0CD5577F93C4F9E2A /* UIView+ORIBProperty.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		274872AC92D36A981056CD87DB7B1B2E /* UILabel+ORIBProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 4020CFF316A1D53286B1E677F671491A /* UILabel+ORIBProperty.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		180F06FCD396BCE061627E6B3C1DFBD1 /* NSObject+ORIBProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = F0F846E3D33E6B07090E8DAE87CFF330 /* NSObject+ORIBProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F91659E83F55743800625FE0BBF9AF7 /* UILabel+ORIBProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 4020CFF316A1D53286B1E677F671491A /* UILabel+ORIBProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B96DF74158FC9DDC78138CECD491983 /* UILabel+ORIBProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 1021E95FD0849E6EADBC805A36E9C666 /* UILabel+ORIBProperty.m */; };
 		2C1018F845003588E1CBBE00BF69763D /* Pods-IBPropertyDemoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF60CD97150F5E4C5E6F33CE0A0269E /* Pods-IBPropertyDemoTests-dummy.m */; };
 		3570CDEF258D53246A7783F5A588E0CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		44D036DC6F4CE1B60CD7969D9E173E08 /* UIControl+ORIBProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B0AE85327CBFD1C20531E137030B823 /* UIControl+ORIBProperty.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3A99A551F725D87D6D83E0AFBECA48AA /* UICollectionViewFlowLayout+ORIBProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 41F365F51EB7CF45239F5D50E1CC25A3 /* UICollectionViewFlowLayout+ORIBProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4755247E386F2360262EA844CD6768C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		4825DA9C56C675202BA04B9A5C08F2AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		4855DF79E24B3381971DC1CB48FC6360 /* NSObject+ORIBProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = F0F846E3D33E6B07090E8DAE87CFF330 /* NSObject+ORIBProperty.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		551F73CAE471D08D07E1EA2BCEADBA40 /* NSLayoutConstraint+ORIBProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = AE7E28F58F7FCC11383AEEA34342EF7D /* NSLayoutConstraint+ORIBProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56062FE5B550832812AC52CD0959E3CC /* UITextField+ORIBProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 495BE1982E98B62161A6E743E123FF7C /* UITextField+ORIBProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6318CFF57C5697891E9B45A4868E5F8C /* Aspects.h in Headers */ = {isa = PBXBuildFile; fileRef = 15B8D9AE38A980A6DF9F29EFD04D02A7 /* Aspects.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		73908BEF778EFF05563E52426495DDCE /* ORIBProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = FB51BB2CD6F6CC1FC2DBD23B7CF9B107 /* ORIBProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		778B57ED154722994399AE13868DDA2F /* UIButton+ORIBProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBA7416BCB4C9CB16CFE61CC0E71E9D /* UIButton+ORIBProperty.m */; };
@@ -28,12 +29,11 @@
 		8BB939DB57BB2CAB7E596A731E325F6F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		8E02D4D08DDB3DB58BE1253B373FEEF3 /* NSLayoutConstraint+ORIBProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7FAC6B916B31EC3F9931DF23EC1778 /* NSLayoutConstraint+ORIBProperty.m */; };
 		902FADDF56F9E994E48601F5B4699356 /* UICollectionViewFlowLayout+ORIBProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = F260A58680E7DC4770A68D0E7635EBD8 /* UICollectionViewFlowLayout+ORIBProperty.m */; };
-		90971D90030327B762312DD6B1E3372D /* UITextView+ORIBProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 14546A274FBDA8890AAC8D7C4FE84973 /* UITextView+ORIBProperty.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		9461673FE692A5FAEDFA3CDCF0DB8471 /* NSLayoutConstraint+ORIBProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = AE7E28F58F7FCC11383AEEA34342EF7D /* NSLayoutConstraint+ORIBProperty.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A3A177A82FAECF63228AB14B7CE4BF13 /* UIView+ORIBProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 61216C1CFAED90F0CD5577F93C4F9E2A /* UIView+ORIBProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A704066A910B640DE2E37F12D13574FE /* NSObject+ORIBProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA8A9A107083A9E70D7C46C9749693C /* NSObject+ORIBProperty.m */; };
+		B28275D886D90F70A92C5517B6521127 /* UIButton+ORIBProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = EDA5DC211B4986CB12ABA961FBED609B /* UIButton+ORIBProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA340F99FD30F8C89332D796AA6EBCB9 /* UIView+ORIBProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F19F9A38537A9D0DE22D3F294557ABA /* UIView+ORIBProperty.m */; };
-		BBE358EAB26146903FD59FC20C5455AB /* UITextField+ORIBProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 495BE1982E98B62161A6E743E123FF7C /* UITextField+ORIBProperty.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		BCE821CA7D2A9E937B534CF57AF80256 /* UICollectionViewFlowLayout+ORIBProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 41F365F51EB7CF45239F5D50E1CC25A3 /* UICollectionViewFlowLayout+ORIBProperty.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BF3AAADE33325EB82880909510E5989D /* UIControl+ORIBProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B0AE85327CBFD1C20531E137030B823 /* UIControl+ORIBProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C28C5CB7E62ECA4D503B59D6E38EA7D6 /* UIControl+ORIBProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 83758504F4003024FE4CF4F63C97A45E /* UIControl+ORIBProperty.m */; };
 		D77458A1CE4FFFD8846599C02325966B /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8CEDCB7A22F55815EC201AE65E576B /* Aspects.m */; };
 		DC40DE48DF381C3EFFF583A412877BBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
@@ -345,16 +345,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9461673FE692A5FAEDFA3CDCF0DB8471 /* NSLayoutConstraint+ORIBProperty.h in Headers */,
-				4855DF79E24B3381971DC1CB48FC6360 /* NSObject+ORIBProperty.h in Headers */,
+				551F73CAE471D08D07E1EA2BCEADBA40 /* NSLayoutConstraint+ORIBProperty.h in Headers */,
+				180F06FCD396BCE061627E6B3C1DFBD1 /* NSObject+ORIBProperty.h in Headers */,
 				73908BEF778EFF05563E52426495DDCE /* ORIBProperty.h in Headers */,
-				081B7B930D3B033546BCA077894EFC6B /* UIButton+ORIBProperty.h in Headers */,
-				BCE821CA7D2A9E937B534CF57AF80256 /* UICollectionViewFlowLayout+ORIBProperty.h in Headers */,
-				44D036DC6F4CE1B60CD7969D9E173E08 /* UIControl+ORIBProperty.h in Headers */,
-				274872AC92D36A981056CD87DB7B1B2E /* UILabel+ORIBProperty.h in Headers */,
-				BBE358EAB26146903FD59FC20C5455AB /* UITextField+ORIBProperty.h in Headers */,
-				90971D90030327B762312DD6B1E3372D /* UITextView+ORIBProperty.h in Headers */,
-				14CBBD00CE475CE04E97D2CDE9DEDA47 /* UIView+ORIBProperty.h in Headers */,
+				B28275D886D90F70A92C5517B6521127 /* UIButton+ORIBProperty.h in Headers */,
+				3A99A551F725D87D6D83E0AFBECA48AA /* UICollectionViewFlowLayout+ORIBProperty.h in Headers */,
+				BF3AAADE33325EB82880909510E5989D /* UIControl+ORIBProperty.h in Headers */,
+				1F91659E83F55743800625FE0BBF9AF7 /* UILabel+ORIBProperty.h in Headers */,
+				56062FE5B550832812AC52CD0959E3CC /* UITextField+ORIBProperty.h in Headers */,
+				0B3E44C23F2F3B483702E8BDF87E0A76 /* UITextView+ORIBProperty.h in Headers */,
+				A3A177A82FAECF63228AB14B7CE4BF13 /* UIView+ORIBProperty.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

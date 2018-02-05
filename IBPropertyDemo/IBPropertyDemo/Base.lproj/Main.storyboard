@@ -71,7 +71,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="ib_cornerRadius">
-                                        <real key="value" value="12"/>
+                                        <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="ib_borderColor">
                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -90,6 +90,18 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="ib_shadowRadius">
                                         <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="efficAlpha">
+                                        <real key="value" value="0.10000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="ib_effectTintColor">
+                                        <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="0.33104130993150682" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ib_darkEffect" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ib_lightEffect" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ib_extralLightEffect" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="ib_effectAlpha">
+                                        <real key="value" value="0.80000000000000004"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
@@ -152,6 +164,9 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="ib_adaptFont" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="ads">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
                         </subviews>

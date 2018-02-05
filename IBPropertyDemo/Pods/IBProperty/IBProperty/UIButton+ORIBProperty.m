@@ -7,6 +7,7 @@
 //
 
 #import "UIButton+ORIBProperty.h"
+#import "UILabel+ORIBProperty.h"
 #import "ORIBProperty.h"
 
 @implementation UIButton (ORIBProperty)

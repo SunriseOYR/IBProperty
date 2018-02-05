@@ -14,7 +14,7 @@
 - (void)setIb_adaptFont:(BOOL)ib_adaptFont {
     
     if (ib_adaptFont == YES) {
-        self.font = fontAdaptWithFont(self.font);
+        self.font = ib_fontAdaptWithFont(self.font);
     }
 }
 

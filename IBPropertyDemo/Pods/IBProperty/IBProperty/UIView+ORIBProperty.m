@@ -8,6 +8,7 @@
 
 #import "UIView+ORIBProperty.h"
 #import "ORIBProperty.h"
+#import "NSObject+ORIBProperty.h"
 
 static const NSString *ib_cornerCircleKey = @"ib_cornerCircleKey";
 
@@ -66,6 +67,10 @@ static const NSString *ib_cornerRadiusKey = @"ib_cornerRadiusKey";
 
 - (void)setIb_cornerRadius:(CGFloat)ib_cornerRadius {
     
+    if (ib_cornerRadius == 0) {
+        return;
+    }
+    
     if (self.ib_cornerCircle == NO) {
         
         self.layer.cornerRadius = ib_cornerRadius;
@@ -98,6 +103,11 @@ static const NSString *ib_cornerRadiusKey = @"ib_cornerRadiusKey";
             }
         }
         
+        if (@available(iOS 8.0, *)) {
+            if ([self isKindOfClass:[UIVisualEffectView class]]) {
+                self.layer.masksToBounds = YES;
+            }
+        } 
     }
 }
 
@@ -124,6 +134,12 @@ static const NSString *ib_cornerRadiusKey = @"ib_cornerRadiusKey";
         if ([self isKindOfClass:[UIButton class]]) {
             UIButton *button = (UIButton *)self;
             if (button.currentImage || button.currentBackgroundImage) {
+                self.layer.masksToBounds = YES;
+            }
+        }
+        
+        if (@available(iOS 8.0, *)) {
+            if ([self isKindOfClass:[UIVisualEffectView class]]) {
                 self.layer.masksToBounds = YES;
             }
         }

@@ -11,8 +11,6 @@
 
 #import <objc/runtime.h>
 #import "Aspects.h"
-#import "UILabel+ORIBProperty.h"
-#import "NSObject+ORIBProperty.h"
 
 #define IB_PROPORTION  [UIScreen mainScreen].bounds.size.width / 375.f
 #define IB_HP(x)     x * IB_PROPORTION

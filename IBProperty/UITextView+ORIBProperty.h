@@ -24,5 +24,4 @@ IB_DESIGNABLE
  */
 @property (nonatomic, copy) IBInspectable NSString * ib_placeholder;
 
-
 @end

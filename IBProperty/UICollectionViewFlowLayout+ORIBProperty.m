@@ -28,7 +28,7 @@ static const NSString *ib_adaptSizeKey = @"ib_adaptSizeKey";
             
             self.footerReferenceSize = CGSizeMake(IB_HP(self.footerReferenceSize.width), IB_HP(self.footerReferenceSize.height));
             
-            self.sectionInset = insetsAdaptWithInsets(self.sectionInset);
+            self.sectionInset = ib_insetsAdaptWithInsets(self.sectionInset);
             
             [self itemSizeAdapt];
         }
