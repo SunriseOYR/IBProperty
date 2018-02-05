@@ -19,7 +19,6 @@
 		4DAD6A382018697B00E6A9CE /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4DAD6A372018697A00E6A9CE /* 2.jpg */; };
 		4DAD6A3A20187F7C00E6A9CE /* ani.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAD6A3920187F7C00E6A9CE /* ani.png */; };
 		4DAD6A3D2018818500E6A9CE /* IBCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DAD6A3C2018818500E6A9CE /* IBCollectionViewController.m */; };
-		4DE8349D2021CAB7001C80CF /* UIImageView+ORIBProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8349C2021CAB7001C80CF /* UIImageView+ORIBProperty.m */; };
 		7882B692C8B2080C351DF13E /* libPods-IBPropertyDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 011D207571694E72724C97F1 /* libPods-IBPropertyDemo.a */; };
 		EF1EBA10B9A9965F5E759125 /* libPods-IBPropertyDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00939ABA8F88637C99D2F532 /* libPods-IBPropertyDemoTests.a */; };
 /* End PBXBuildFile section */
@@ -66,8 +65,6 @@
 		4DAD6A3920187F7C00E6A9CE /* ani.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ani.png; sourceTree = "<group>"; };
 		4DAD6A3B2018818500E6A9CE /* IBCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBCollectionViewController.h; sourceTree = "<group>"; };
 		4DAD6A3C2018818500E6A9CE /* IBCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBCollectionViewController.m; sourceTree = "<group>"; };
-		4DE8349B2021CAB7001C80CF /* UIImageView+ORIBProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ORIBProperty.h"; sourceTree = "<group>"; };
-		4DE8349C2021CAB7001C80CF /* UIImageView+ORIBProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ORIBProperty.m"; sourceTree = "<group>"; };
 		706A5C4CFB7DD55572A039EA /* Pods-IBPropertyDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IBPropertyDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IBPropertyDemoUITests/Pods-IBPropertyDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		947FF885A669A4C56A230C85 /* Pods-IBPropertyDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IBPropertyDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IBPropertyDemoTests/Pods-IBPropertyDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		9D439AB7C089549A76C55A58 /* Pods-IBPropertyDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IBPropertyDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-IBPropertyDemo/Pods-IBPropertyDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -136,8 +133,6 @@
 				4D8781852016CA8900ED0F9A /* ViewController.m */,
 				4DAD6A3B2018818500E6A9CE /* IBCollectionViewController.h */,
 				4DAD6A3C2018818500E6A9CE /* IBCollectionViewController.m */,
-				4DE8349B2021CAB7001C80CF /* UIImageView+ORIBProperty.h */,
-				4DE8349C2021CAB7001C80CF /* UIImageView+ORIBProperty.m */,
 				4D8781872016CA8900ED0F9A /* Main.storyboard */,
 				4D87818A2016CA8900ED0F9A /* Assets.xcassets */,
 				4D87818C2016CA8900ED0F9A /* LaunchScreen.storyboard */,
@@ -482,7 +477,6 @@
 				4D8781862016CA8900ED0F9A /* ViewController.m in Sources */,
 				4DAD6A3D2018818500E6A9CE /* IBCollectionViewController.m in Sources */,
 				4D8781912016CA8900ED0F9A /* main.m in Sources */,
-				4DE8349D2021CAB7001C80CF /* UIImageView+ORIBProperty.m in Sources */,
 				4D8781832016CA8900ED0F9A /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

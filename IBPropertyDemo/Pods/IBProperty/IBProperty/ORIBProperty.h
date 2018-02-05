@@ -9,6 +9,7 @@
 #ifndef ORIBProperty_h
 #define ORIBProperty_h
 
+#import <UIKit/UIKit.h>
 #import <objc/runtime.h>
 #import "Aspects.h"
 
@@ -22,16 +23,16 @@
 #endif /* ORIBProperty_h */
 
 
-//适配font
-static inline UIFont * fontAdaptWithFont(UIFont *font) {
+//adapt font
+static inline UIFont * ib_fontAdaptWithFont(UIFont *font) {
     
     UIFontDescriptor *fontDes = font.fontDescriptor;
     NSNumber *fontSize = [fontDes objectForKey:@"NSFontSizeAttribute"];
     return [UIFont fontWithName:font.fontName size:IB_HP(fontSize.floatValue)];
 }
 
-//适配inset
-static inline UIEdgeInsets insetsAdaptWithInsets(UIEdgeInsets insets) {
+//adapt UIEdgeInsets
+static inline UIEdgeInsets ib_insetsAdaptWithInsets(UIEdgeInsets insets) {
     
     return UIEdgeInsetsMake(IB_HP(insets.top), IB_HP(insets.left), IB_HP(insets.bottom), IB_HP(insets.right));
 }

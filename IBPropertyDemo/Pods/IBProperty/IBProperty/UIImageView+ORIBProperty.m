@@ -7,8 +7,8 @@
 //
 
 #import "UIImageView+ORIBProperty.h"
-#import <UIView+ORIBProperty.h>
-#import <ORIBProperty.h>
+#import "UIView+ORIBProperty.h"
+#import "ORIBProperty.h"
 
 static NSInteger const effectViewTag = 2018;
 
@@ -37,13 +37,22 @@ static NSInteger const effectViewTag = 2018;
 
 - (void)setIb_effectAlpha:(CGFloat)ib_effectAlpha {
     if (ib_effectAlpha > 0) {
+        
+        CGFloat alpha = ib_effectAlpha > 1 ? 1 : ib_effectAlpha;
+        
+        alpha = (1- alpha) * 0.4 + alpha;
+        
+        NSLog(@"asda %lf", alpha);
+        
+        objc_setAssociatedObject(self, @selector(setIb_effectAlpha:), @(alpha), OBJC_ASSOCIATION_COPY_NONATOMIC);
+    
         UIVisualEffectView *effectView = [self viewWithTag:effectViewTag];
-        effectView.alpha = ib_effectAlpha > 1 ? 1 : ib_effectAlpha;
+        effectView.alpha = alpha;
     }
 }
 
 - (CGFloat)ib_effectAlpha {
-    return [self viewWithTag:effectViewTag].alpha;
+    return [objc_getAssociatedObject(self, @selector(setIb_effectAlpha:)) doubleValue];
 }
 
 
@@ -71,12 +80,24 @@ static NSInteger const effectViewTag = 2018;
     UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
     effectView.frame = self.bounds;
     effectView.tag = effectViewTag;
-    effectView.alpha = 0.5;
+    CGFloat alpha = self.ib_effectAlpha > 0 ? self.ib_effectAlpha : 0.5;
+    effectView.alpha = alpha;
     [self addSubview:effectView];
-    effectView.ib_cornerCircle = self.ib_cornerCircle;
     effectView.ib_cornerRadius = self.ib_cornerRadius;
+    effectView.ib_cornerCircle = self.ib_cornerCircle;
+
     __weak typeof (self) weakSelf = self;
+    
+    [self aspect_hookSelector:@selector(setIb_cornerCircle:) withOptions:AspectPositionAfter usingBlock:^{
+        effectView.ib_cornerCircle = weakSelf.ib_cornerCircle;
+    } error:nil];
+    
+    [self aspect_hookSelector:@selector(setIb_cornerRadius:) withOptions:AspectPositionAfter usingBlock:^{
+        effectView.ib_cornerRadius = weakSelf.ib_cornerRadius;
+    } error:nil];
+    
     [self aspect_hookSelector:@selector(setBounds:) withOptions:AspectPositionAfter usingBlock:^{
+        effectView.bounds = weakSelf.bounds;
         effectView.frame = weakSelf.bounds;
     } error:nil];
     

@@ -9,21 +9,20 @@
 #import "UIView+ORIBProperty.h"
 #import "ORIBProperty.h"
 #import "NSObject+ORIBProperty.h"
+#import "UIImageView+ORIBProperty.h"
 
 static const NSString *ib_cornerCircleKey = @"ib_cornerCircleKey";
 
 static const NSString *ib_cornerRadiusKey = @"ib_cornerRadiusKey";
 
+@interface UIImage (ORIBProperty)
 
-@interface UIImage(ORIBProperty)
-
-- (UIImage*)imageAddib_cornerRadius:(CGFloat)radius andSize:(CGSize)size;
-
+- (UIImage *)ib_addCornerRadius:(CGFloat)radius andSize:(CGSize)size;
 @end
 
-@implementation UIImage(ORIBProperty)
+@implementation UIImage (ORIBProperty)
 
-- (UIImage*)imageAddib_cornerRadius:(CGFloat)radius andSize:(CGSize)size{
+- (UIImage *)ib_addCornerRadius:(CGFloat)radius andSize:(CGSize)size {
     
     CGRect rect = CGRectMake(0, 0, size.width, size.height);
     UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
@@ -71,43 +70,50 @@ static const NSString *ib_cornerRadiusKey = @"ib_cornerRadiusKey";
         return;
     }
     
-    if (self.ib_cornerCircle == NO) {
+    self.layer.cornerRadius = ib_cornerRadius;
+    
+    if ([self isKindOfClass:[UIImageView class]]) {
         
-        self.layer.cornerRadius = ib_cornerRadius;
+        UIImageView *imageView = (UIImageView *)self;
         
-        if ([self isKindOfClass:[UIImageView class]]) {
-            
-            [self method_exchangeWithSelector:@selector(setImage:) toSelector:@selector(ib_setImage:)];
-            
-            __weak typeof (self) weakSelf = self;
-            
-            [self aspect_hookSelector:@selector(setBounds:) withOptions:AspectPositionAfter usingBlock:^(){
-                
-                __strong typeof(weakSelf) strongSelf = weakSelf;
-                
-                if ([strongSelf isKindOfClass:[UIImageView class]]) {
-                    UIImageView *imageview = (UIImageView *)strongSelf;
-                    imageview.image = imageview.image;
-                }
-            } error:nil];
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            [self ib_methodExchangeWithSelector:@selector(setImage:) toSelector:@selector(ib_setImage:)];
+        });
+        
+        
+        if (imageView.image) {
+            imageView.image = imageView.image;
         }
+        __weak typeof (self) weakSelf = self;
+
+        [self aspect_hookSelector:@selector(setBounds:) withOptions:AspectPositionAfter usingBlock:^(){
+            
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            
+            if ([strongSelf isKindOfClass:[UIImageView class]]) {
+                UIImageView *imageview = (UIImageView *)strongSelf;
+                imageview.image = imageview.image;
+            }
+        } error:nil];
         
-        if ([self isKindOfClass:[UILabel class]]) {
+    }
+    
+    if ([self isKindOfClass:[UILabel class]]) {
+        self.layer.masksToBounds = YES;
+    }
+    
+    if ([self isKindOfClass:[UIButton class]]) {
+        UIButton *button = (UIButton *)self;
+        if (button.currentImage || button.currentBackgroundImage) {
             self.layer.masksToBounds = YES;
         }
-        
-        if ([self isKindOfClass:[UIButton class]]) {
-            UIButton *button = (UIButton *)self;
-            if (button.currentImage || button.currentBackgroundImage) {
-                self.layer.masksToBounds = YES;
-            }
+    }
+    
+    if (@available(iOS 8.0, *)) {
+        if ([self isKindOfClass:[UIVisualEffectView class]]) {
+            self.layer.masksToBounds = YES;
         }
-        
-        if (@available(iOS 8.0, *)) {
-            if ([self isKindOfClass:[UIVisualEffectView class]]) {
-                self.layer.masksToBounds = YES;
-            }
-        } 
     }
 }
 
@@ -121,28 +127,7 @@ static const NSString *ib_cornerRadiusKey = @"ib_cornerRadiusKey";
         
         objc_setAssociatedObject(self, &ib_cornerCircleKey, @(ib_cornerCircle), OBJC_ASSOCIATION_COPY_NONATOMIC);
         
-        self.layer.cornerRadius = self.bounds.size.height / 2.0f;
-        
-        if ([self isKindOfClass:[UIImageView class]]) {
-            [self method_exchangeWithSelector:@selector(setImage:) toSelector:@selector(ib_setImage:)];
-        }
-        
-        if ([self isKindOfClass:[UILabel class]]) {
-            self.layer.masksToBounds = YES;
-        }
-        
-        if ([self isKindOfClass:[UIButton class]]) {
-            UIButton *button = (UIButton *)self;
-            if (button.currentImage || button.currentBackgroundImage) {
-                self.layer.masksToBounds = YES;
-            }
-        }
-        
-        if (@available(iOS 8.0, *)) {
-            if ([self isKindOfClass:[UIVisualEffectView class]]) {
-                self.layer.masksToBounds = YES;
-            }
-        }
+        self.ib_cornerRadius = self.bounds.size.height / 2.0f;
         
         __weak typeof (self) weakSelf = self;
 
@@ -162,6 +147,10 @@ static const NSString *ib_cornerRadiusKey = @"ib_cornerRadiusKey";
     
 }
 
+- (BOOL)ib_cornerCircle {
+    return objc_getAssociatedObject(self, &ib_cornerCircleKey);
+}
+
 - (void)ib_setImage:(UIImage *)image {
     
     UIImage *aImage = image;
@@ -172,17 +161,13 @@ static const NSString *ib_cornerRadiusKey = @"ib_cornerRadiusKey";
         if (size.width == 0 || size.height == 0) {
             size = image.size;
         }
-        aImage = [image imageAddib_cornerRadius:self.layer.cornerRadius andSize:self.bounds.size];
+        aImage = [image ib_addCornerRadius:self.layer.cornerRadius andSize:self.bounds.size];
         
         aImage = aImage == nil ? image : aImage;
     }
-    
     [self ib_setImage:aImage];
 }
 
-- (BOOL)ib_cornerCircle {
-    return objc_getAssociatedObject(self, &ib_cornerCircleKey);
-}
 
 #pragma mark -- shadow
 

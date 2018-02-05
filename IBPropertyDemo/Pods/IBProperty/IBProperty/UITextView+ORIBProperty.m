@@ -20,7 +20,7 @@ static NSInteger const placeholderTag = 2017;
 - (void)setIb_adaptFont:(BOOL)ib_adaptFont {
     
     if (ib_adaptFont == YES) {
-        self.font = fontAdaptWithFont(self.font);
+        self.font = ib_fontAdaptWithFont(self.font);
     }
 }
 
@@ -42,7 +42,7 @@ static NSInteger const placeholderTag = 2017;
         }
         label.text = ib_placeholder;
         [label sizeToFit];
-        label.hidden = NO;
+        label.hidden = self.text.length > 0;
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textBeginEditing) name:UITextViewTextDidBeginEditingNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textEndEditing) name:UITextViewTextDidEndEditingNotification object:nil];

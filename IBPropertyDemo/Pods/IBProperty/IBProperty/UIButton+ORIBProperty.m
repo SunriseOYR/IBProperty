@@ -16,9 +16,9 @@
     
     if (ib_adaptInsets == YES) {
         
-        self.contentEdgeInsets = insetsAdaptWithInsets(self.contentEdgeInsets);
-        self.titleEdgeInsets = insetsAdaptWithInsets(self.titleEdgeInsets);
-        self.imageEdgeInsets = insetsAdaptWithInsets(self.imageEdgeInsets);
+        self.contentEdgeInsets = ib_insetsAdaptWithInsets(self.contentEdgeInsets);
+        self.titleEdgeInsets = ib_insetsAdaptWithInsets(self.titleEdgeInsets);
+        self.imageEdgeInsets = ib_insetsAdaptWithInsets(self.imageEdgeInsets);
     }
 }
 

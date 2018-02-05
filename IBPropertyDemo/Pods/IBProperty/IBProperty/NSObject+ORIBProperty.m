@@ -17,7 +17,7 @@
 
 @implementation NSObject (ORIBProperty)
 
-- (void)method_exchangeWithSelector:(SEL)selector toSelector:(SEL)toSector {
+- (void)ib_methodExchangeWithSelector:(SEL)selector toSelector:(SEL)toSector {
     
     Method old = class_getInstanceMethod([self class], selector);
     Method new = class_getInstanceMethod([self class], toSector);

@@ -10,6 +10,6 @@
 
 @interface NSObject (ORIBProperty)
 
-- (void)method_exchangeWithSelector:(SEL)selector toSelector:(SEL)toSector;
+- (void)ib_methodExchangeWithSelector:(SEL)selector toSelector:(SEL)toSector;
 
 @end
