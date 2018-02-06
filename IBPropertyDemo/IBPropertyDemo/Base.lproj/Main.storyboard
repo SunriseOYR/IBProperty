@@ -62,7 +62,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Lz7-DT-IRW">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="Lz7-DT-IRW">
                                 <rect key="frame" x="20" y="84" width="335" height="178.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Lz7-DT-IRW" secondAttribute="height" multiplier="15:8" id="2Ov-v0-gLK"/>
@@ -171,9 +171,17 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dsi-hS-Z3a" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="08s-Ya-xQK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lz7-DT-IRW" secondAttribute="trailing" constant="20" id="5Ys-Y8-Fsg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lz7-DT-IRW" secondAttribute="trailing" constant="20" id="5Ys-Y8-Fsg">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ib_adaptConstant" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
                             <constraint firstItem="0Jf-Tj-dFf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ChM-NX-dfB"/>
-                            <constraint firstItem="Lz7-DT-IRW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="IaN-0b-rpP"/>
+                            <constraint firstItem="Lz7-DT-IRW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="IaN-0b-rpP">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ib_adaptConstant" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FTV-Ll-a3v" secondAttribute="trailing" constant="12" id="TZU-7G-RMV"/>
                             <constraint firstItem="Lz7-DT-IRW" firstAttribute="top" secondItem="0Jf-Tj-dFf" secondAttribute="bottom" constant="20" id="Up1-D1-wo6"/>
                             <constraint firstItem="FTV-Ll-a3v" firstAttribute="top" secondItem="qDG-ZC-7ox" secondAttribute="bottom" constant="20" id="ZRa-UL-rTj"/>
@@ -206,7 +214,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="202.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Gjv-vr-too">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="202" translatesAutoresizingMaskIntoConstraints="NO" id="Gjv-vr-too">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="234.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" secondItem="Gjv-vr-too" secondAttribute="width" multiplier="5:8" id="ham-Lp-btI">
@@ -222,7 +230,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2.1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="KUd-Qr-pyq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2.1" translatesAutoresizingMaskIntoConstraints="NO" id="KUd-Qr-pyq">
                                 <rect key="frame" x="137.5" y="184.5" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Ows-Sm-l0z">
@@ -253,7 +261,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LuB-LB-iQq">
                                 <rect key="frame" x="8" y="350.5" width="359" height="264"/>
-                                <mutableString key="text">Born and raised in Dallas, Texas where she graduated Lake Highlands High School, Amy Acker is the oldest of four children; she has two sisters and one brother. An acting major at Southern Methodist University, Amy acted in several college theater productions. She appeared in various roles during the fantasy segments for the popular award-winning children's TV series Wishbone (1995), which was filmed in Texas and consisted of Dallas theater actors. Upon graduation she worked in Wisconsin and New York before winning the role of "Fred" on Angel.</mutableString>
+                                <string key="text">Born and raised in Dallas, Texas where she graduated Lake Highlands High School, Amy Acker is the oldest of four children; she has two sisters and one brother. An acting major at Southern Methodist University, Amy acted in several college theater productions. She appeared in various roles during the fantasy segments for the popular award-winning children's TV series Wishbone (1995), which was filmed in Texas and consisted of Dallas theater actors. Upon graduation she worked in Wisconsin and New York before winning the role of "Fred" on Angel.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -446,7 +454,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="120" height="180"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ani.png" translatesAutoresizingMaskIntoConstraints="NO" id="mr5-g9-4nC">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ani" translatesAutoresizingMaskIntoConstraints="NO" id="mr5-g9-4nC">
                                             <rect key="frame" x="0.0" y="0.0" width="120" height="180"/>
                                         </imageView>
                                     </subviews>
@@ -527,10 +535,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="2.1.jpg" width="448" height="448"/>
-        <image name="2.jpg" width="720" height="450"/>
-        <image name="202.jpg" width="1440" height="900"/>
+        <image name="2" width="720" height="450"/>
+        <image name="2.1" width="448" height="448"/>
+        <image name="202" width="1440" height="900"/>
         <image name="Settings" width="16" height="16"/>
-        <image name="ani.png" width="299" height="390"/>
+        <image name="ani" width="299" height="390"/>
     </resources>
 </document>

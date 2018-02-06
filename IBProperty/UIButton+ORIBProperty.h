@@ -19,7 +19,7 @@ IB_DESIGNABLE
 @property (nonatomic, assign) IBInspectable BOOL ib_adaptFont;
 
 /*
- * 根据屏幕的宽度 适配 字体contentEdgeInsets、titleEdgeInsets、imageEdgeInsets
+ * 根据屏幕的宽度 适配 contentEdgeInsets、titleEdgeInsets、imageEdgeInsets
  * adapt contentEdgeInsets、titleEdgeInsets and imageEdgeInsets by screen width
  */
 @property (nonatomic, assign) IBInspectable BOOL ib_adaptInsets;
