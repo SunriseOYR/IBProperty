@@ -1,5 +1,8 @@
 
-##### 前言
+
+## IBProperty
+
+#### 前言
 ---
 对于 UI 界面的编写工作，是否应该用 xib/storyboard 完成，一直是iOS开发中的争议，然而本文并参与讨论这个话题。（手动笑脸）
 有兴趣的朋友可以参考唐巧的[这篇文章](http://blog.devtang.com/2015/03/22/ios-dev-controversy-2/)
@@ -15,7 +18,7 @@
 IBProperty 通过IB_DESIGNABLE 和 IBInspectable 以类目的形式为xib/storyboard  添加了一些简单有效的新属性，如阴影、圆角、毛玻璃等（具体见本文最后）
 在xib/storyboard上要做到完美适配，需要添加很多较为复杂的约束，如果需要让约束的常量适配的话，就需要通过代码去设置了；字体的适配也是如此，通过IBProperty只需要在xib/storyboard设置一个属性就OK了。这些适配不仅体现在约束和字体上，IBProperty还提供了一系列适配方式，让xib/storyboard 在屏幕适配上也更加简单。
 
-##### 安装
+#### 安装
 ---
 * 使用cocoapods (推荐)
 
@@ -36,7 +39,7 @@ IBProperty 通过IB_DESIGNABLE 和 IBInspectable 以类目的形式为xib/storyb
 IBProperty不需要引用任何头文件，除非确实需要在代码中使用（事实上，并不推荐这么做）
 因为IBProperty旨在服务于xib/storyboard，其中大部分属性都只是计算型属性，少部分属性无法间接获取的，通过getter 也将无法获取它，因为并没有为它真正开辟内存。此外，在代码中使用IBProperty，对同一个属性做多次赋值，可能会多次适配，导致一些奇怪的bug。**总之，如果确实需要在代码中使用IBProperty，一定要对源码比较熟悉才行**
 
-##### Property
+#### Property
 ---
 * UIView  
 
@@ -113,7 +116,7 @@ IBProperty不需要引用任何头文件，除非确实需要在代码中使用�
       // 适配导航栏高度，若为YES constant将不会适配比例，而是在iPhone X 上加上24pt, 常用于 为自定义导航栏的子视图添加约束 
       ib_adaptXTopConstant;
 
-##### 后续
+#### 后续
 ---
 IBProperty处于不间断更新当中，读者有较好的建议或意见，都可以提出issue，每次更新都会在GitHub以及[简书](https://www.jianshu.com/p/9a758301c5f4)上记录更新日志。
-喜欢点个赞喔
+喜欢的点个赞喔
