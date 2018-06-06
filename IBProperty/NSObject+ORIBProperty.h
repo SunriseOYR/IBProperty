@@ -12,4 +12,9 @@
 
 - (void)ib_methodExchangeWithSelector:(SEL)selector toSelector:(SEL)toSector;
 
+- (void)ib_setAssociateValue:(id)value withKey:(void *)key;
+
+- (id)ib_getAssociatedValueForKey:(void *)key;
+
+
 @end

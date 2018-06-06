@@ -28,5 +28,9 @@ IB_DESIGNABLE
 @property(nonatomic, assign) IBInspectable CGFloat ib_shadowOpacity;
 @property(nonatomic, assign) IBInspectable CGFloat ib_shadowRadius;
 
+//gradient 渐变
+@property(nonatomic, assign) IBInspectable UIColor *ib_gradientStartColor;
+@property(nonatomic, assign) IBInspectable UIColor *ib_gradientEndColor;
+
 
 @end
