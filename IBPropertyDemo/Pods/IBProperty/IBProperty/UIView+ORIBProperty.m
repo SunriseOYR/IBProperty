@@ -11,33 +11,13 @@
 #import "NSObject+ORIBProperty.h"
 #import "UIImageView+ORIBProperty.h"
 
-static const NSString *ib_cornerCircleKey = @"ib_cornerCircleKey";
 
-static const NSString *ib_cornerRadiusKey = @"ib_cornerRadiusKey";
+static const NSString *ib_gradientStartColorKey = @"ib_gradientStartColorKey";
 
-@interface UIImage (ORIBProperty)
+static const NSString *ib_gradientEndColorKey = @"ib_gradientEndColorKey";
 
-- (UIImage *)ib_addCornerRadius:(CGFloat)radius andSize:(CGSize)size;
-@end
+static const NSString *ib_gradientLayerKey = @"ib_gradientLayerKey";
 
-@implementation UIImage (ORIBProperty)
-
-- (UIImage *)ib_addCornerRadius:(CGFloat)radius andSize:(CGSize)size {
-    
-    CGRect rect = CGRectMake(0, 0, size.width, size.height);
-    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
-    UIBezierPath * path = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(radius, radius)];
-    CGContextAddPath(ctx,path.CGPath);
-    CGContextClip(ctx);
-    [self drawInRect:rect];
-    CGContextDrawPath(ctx, kCGPathFillStroke);
-    UIImage * newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return newImage;
-}
-
-@end
 
 @implementation UIView (ORIBProperty)
 
@@ -71,50 +51,10 @@ static const NSString *ib_cornerRadiusKey = @"ib_cornerRadiusKey";
     }
     
     self.layer.cornerRadius = ib_cornerRadius;
-    
-    if ([self isKindOfClass:[UIImageView class]]) {
-        
-        UIImageView *imageView = (UIImageView *)self;
-        
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            [self ib_methodExchangeWithSelector:@selector(setImage:) toSelector:@selector(ib_setImage:)];
-        });
-        
-        
-        if (imageView.image) {
-            imageView.image = imageView.image;
-        }
-        __weak typeof (self) weakSelf = self;
 
-        [self aspect_hookSelector:@selector(setBounds:) withOptions:AspectPositionAfter usingBlock:^(){
-            
-            __strong typeof(weakSelf) strongSelf = weakSelf;
-            
-            if ([strongSelf isKindOfClass:[UIImageView class]]) {
-                UIImageView *imageview = (UIImageView *)strongSelf;
-                imageview.image = imageview.image;
-            }
-        } error:nil];
-        
-    }
+    [self _or_addRoundedCorners:UIRectCornerTopLeft | UIRectCornerTopRight | UIRectCornerBottomLeft | UIRectCornerBottomRight withRadii:CGSizeMake(ib_cornerRadius, ib_cornerRadius)];
     
-    if ([self isKindOfClass:[UILabel class]]) {
-        self.layer.masksToBounds = YES;
-    }
-    
-    if ([self isKindOfClass:[UIButton class]]) {
-        UIButton *button = (UIButton *)self;
-        if (button.currentImage || button.currentBackgroundImage) {
-            self.layer.masksToBounds = YES;
-        }
-    }
-    
-    if (@available(iOS 8.0, *)) {
-        if ([self isKindOfClass:[UIVisualEffectView class]]) {
-            self.layer.masksToBounds = YES;
-        }
-    }
+    return;
 }
 
 - (CGFloat)ib_cornerRadius {
@@ -125,8 +65,6 @@ static const NSString *ib_cornerRadiusKey = @"ib_cornerRadiusKey";
 
     if (ib_cornerCircle == YES) {
         
-        objc_setAssociatedObject(self, &ib_cornerCircleKey, @(ib_cornerCircle), OBJC_ASSOCIATION_COPY_NONATOMIC);
-        
         self.ib_cornerRadius = self.bounds.size.height / 2.0f;
         
         __weak typeof (self) weakSelf = self;
@@ -135,38 +73,41 @@ static const NSString *ib_cornerRadiusKey = @"ib_cornerRadiusKey";
             
             __strong typeof(weakSelf) strongSelf = weakSelf;
             
-            strongSelf.layer.cornerRadius = strongSelf.bounds.size.height / 2.0f;
-            
-            if ([strongSelf isKindOfClass:[UIImageView class]]) {
-                UIImageView *imageview = (UIImageView *)strongSelf;
-                imageview.image = imageview.image;
-            }
-            
+            self.ib_cornerRadius = strongSelf.bounds.size.height / 2.0f;
+ 
         } error:nil];
     }
     
 }
 
 - (BOOL)ib_cornerCircle {
-    return objc_getAssociatedObject(self, &ib_cornerCircleKey);
+    return self.layer.cornerRadius == self.bounds.size.height / 2.0f;
 }
 
-- (void)ib_setImage:(UIImage *)image {
+//
+- (void)_or_addRoundedCorners:(UIRectCorner)corners
+                   withRadii:(CGSize)radii {
     
-    UIImage *aImage = image;
+    [self _ib_addRoundedCorners:corners withRadii:radii];
     
-    if (!self.layer.masksToBounds && self.ib_cornerRadius > 0) {
-        
-        CGSize size = self.bounds.size;
-        if (size.width == 0 || size.height == 0) {
-            size = image.size;
-        }
-        aImage = [image ib_addCornerRadius:self.layer.cornerRadius andSize:self.bounds.size];
-        
-        aImage = aImage == nil ? image : aImage;
-    }
-    [self ib_setImage:aImage];
+    __weak typeof (self) weakSelf = self;
+    [self aspect_hookSelector:@selector(layoutSubviews) withOptions:AspectPositionAfter usingBlock:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf _ib_addRoundedCorners:corners withRadii:radii];
+    } error:nil];
+    
 }
+
+- (void)_ib_addRoundedCorners:(UIRectCorner)corners
+                    withRadii:(CGSize)radii {
+    
+    UIBezierPath* rounded = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:corners cornerRadii:radii];
+    CAShapeLayer* shape = [[CAShapeLayer alloc] init];
+    [shape setPath:rounded.CGPath];
+    
+    self.layer.mask = shape;
+}
+
 
 
 #pragma mark -- shadow
@@ -201,6 +142,72 @@ static const NSString *ib_cornerRadiusKey = @"ib_cornerRadiusKey";
 
 - (CGFloat)ib_shadowRadius {
     return self.layer.shadowRadius;
+}
+
+#pragma mark -- gradient
+
+- (void)setIb_gradientStartColor:(UIColor *)ib_gradientStartColor {
+    [self ib_setAssociateValue:ib_gradientStartColor withKey:&ib_gradientStartColorKey];
+    [self _ib_addGradient];
+}
+
+- (void)setIb_gradientEndColor:(UIColor *)ib_gradientEndColor {
+    [self ib_setAssociateValue:ib_gradientEndColor withKey:&ib_gradientEndColorKey];
+    [self _ib_addGradient];
+}
+
+- (UIColor *)ib_gradientEndColor {
+    return [self ib_getAssociatedValueForKey:&ib_gradientEndColorKey];
+}
+
+- (UIColor *)ib_gradientStartColor {
+    return [self ib_getAssociatedValueForKey:&ib_gradientStartColorKey];
+}
+
+- (void)_ib_addGradient {
+    
+    CAGradientLayer *gradientLayer = [self ib_getAssociatedValueForKey:&ib_gradientLayerKey];
+    
+    if (!gradientLayer) {
+        gradientLayer = [CAGradientLayer layer];
+        
+        gradientLayer.frame = self.bounds;
+        gradientLayer.startPoint = CGPointMake(0, 0);
+        gradientLayer.endPoint = CGPointMake(1.0, 0);
+        gradientLayer.locations = @[@(0.0f), @(1.0f)];
+        gradientLayer.zPosition = -100;
+        [self.layer addSublayer:gradientLayer];
+        [self ib_setAssociateValue:gradientLayer withKey:@"gradientLayer"];
+        
+        [self aspect_hookSelector:@selector(layoutSubviews) withOptions:AspectPositionAfter usingBlock:^{
+            gradientLayer.frame = self.bounds;
+        } error:nil];
+        
+    }
+    gradientLayer.colors = [self _ib_getCGColors];
+}
+
+- (NSArray *)_ib_getCGColors {
+    if (self.ib_gradientStartColor && self.ib_gradientEndColor) {
+        return @[(__bridge id)self.ib_gradientStartColor.CGColor, (__bridge id)self.ib_gradientEndColor.CGColor];
+    }
+    
+    if (self.ib_gradientStartColor) {
+        return @[[self _ib_getCGColorWithColor:self.ib_gradientStartColor alpha:0.3], [self _ib_getCGColorWithColor:self.ib_gradientStartColor alpha:0.1]];
+    }
+    
+    if (self.ib_gradientEndColor) {
+        return @[[self _ib_getCGColorWithColor:self.ib_gradientEndColor alpha:0.1], [self _ib_getCGColorWithColor:self.ib_gradientEndColor alpha:0.3]];
+    }
+    
+    return nil;
+}
+
+- (id)_ib_getCGColorWithColor:(UIColor *)color alpha:(CGFloat)alpha {
+    
+    CGFloat red = 0.0, green = 0.0, blue = 0, al = 0.0;
+    [color getRed:&red green:&green blue:&blue alpha:&al];
+    return  (__bridge id)[UIColor colorWithRed:red green:green blue:blue alpha:alpha].CGColor;
 }
 
 

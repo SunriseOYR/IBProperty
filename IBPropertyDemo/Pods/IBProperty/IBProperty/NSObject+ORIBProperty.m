@@ -27,6 +27,12 @@
     }
 }
 
+- (void)ib_setAssociateValue:(id)value withKey:(void *)key {
+    objc_setAssociatedObject(self, key, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
 
+- (id)ib_getAssociatedValueForKey:(void *)key {
+    return objc_getAssociatedObject(self, key);
+}
 
 @end

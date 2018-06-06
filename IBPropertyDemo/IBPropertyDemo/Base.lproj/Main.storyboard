@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7KG-Cl-KSt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7KG-Cl-KSt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -126,7 +126,6 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsi-hS-Z3a">
                                 <rect key="frame" x="137.5" y="547" width="100" height="100"/>
-                                <color key="backgroundColor" red="0.4039215686" green="0.68235294120000001" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="a0G-gL-u4i">
                                         <userDefinedRuntimeAttributes>
@@ -136,13 +135,17 @@
                                     <constraint firstAttribute="width" secondItem="dsi-hS-Z3a" secondAttribute="height" multiplier="1:1" id="l7V-lG-Hy4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="限制重复点击">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <state key="normal" title="限制重复点击"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="ib_cornerCircle" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="ib_adaptFont" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="ib_reClickEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="ib_gradientStartColor">
+                                        <color key="value" red="1" green="0.52385252058682541" blue="0.46837438221859906" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="ib_gradientEndColor">
+                                        <color key="value" red="0.69829420086316807" green="1" blue="0.13385966073331601" alpha="0.85774293664383561" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="action_reClickTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wfZ-EQ-ufF"/>
@@ -230,7 +233,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2.1" translatesAutoresizingMaskIntoConstraints="NO" id="KUd-Qr-pyq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2.1" translatesAutoresizingMaskIntoConstraints="NO" id="KUd-Qr-pyq">
                                 <rect key="frame" x="137.5" y="184.5" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Ows-Sm-l0z">
@@ -246,7 +249,7 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="ib_cornerCircle" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="ib_borderWidth">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
@@ -420,6 +423,11 @@
                             <constraint firstItem="Gjv-vr-too" firstAttribute="leading" secondItem="VU8-6A-KQt" secondAttribute="leading" id="tVT-gO-UOd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VU8-6A-KQt"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="ib_gradientStartColor">
+                                <color key="value" red="0.97647058819999999" green="0.49019607840000001" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="5Di-7v-zBO"/>
                 </viewController>
@@ -485,6 +493,11 @@
                                 <constraint firstItem="nDC-q6-pz8" firstAttribute="centerX" secondItem="pUL-iQ-Gut" secondAttribute="centerX" id="lqx-8r-C3i"/>
                                 <constraint firstItem="nDC-q6-pz8" firstAttribute="centerY" secondItem="pUL-iQ-Gut" secondAttribute="centerY" id="mRx-n5-jCV"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="ib_gradientEndColor">
+                                    <color key="value" red="1" green="0.38948215539999997" blue="0.99304716829999995" alpha="0.85774293660000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </collectionReusableView>
                         <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="footerIdf" id="0w0-4A-0gP">
                             <rect key="frame" x="0.0" y="230" width="375" height="30"/>
@@ -504,6 +517,11 @@
                                 <constraint firstItem="gtC-Od-oz9" firstAttribute="centerY" secondItem="0w0-4A-0gP" secondAttribute="centerY" id="3ad-5L-lnK"/>
                                 <constraint firstItem="gtC-Od-oz9" firstAttribute="centerX" secondItem="0w0-4A-0gP" secondAttribute="centerX" id="ldA-Nq-QMp"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="ib_gradientStartColor">
+                                    <color key="value" red="1" green="0.38948215542410969" blue="0.99304716832834083" alpha="0.85774293664383561" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="AEk-XO-Dzo" id="51c-qb-HSy"/>
