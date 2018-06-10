@@ -152,7 +152,7 @@ static const NSString *ib_gradientLayerKey = @"ib_gradientLayerKey";
 }
 
 - (void)setIb_gradientEndColor:(UIColor *)ib_gradientEndColor {
-    [self ib_setAssociateValue:ib_gradientEndColor withKey:&ib_gradientStartColorKey];
+    [self ib_setAssociateValue:ib_gradientEndColor withKey:&ib_gradientEndColorKey];
     [self _ib_addGradient];
 }
 
@@ -197,7 +197,7 @@ static const NSString *ib_gradientLayerKey = @"ib_gradientLayerKey";
     }
     
     if (self.ib_gradientEndColor) {
-        return @[[self _ib_getCGColorWithColor:self.ib_gradientEndColor alpha:0.3], [self _ib_getCGColorWithColor:self.ib_gradientEndColor alpha:0.1]];
+        return @[[self _ib_getCGColorWithColor:self.ib_gradientEndColor alpha:0.1], [self _ib_getCGColorWithColor:self.ib_gradientEndColor alpha:0.3]];
     }
     
     return nil;
