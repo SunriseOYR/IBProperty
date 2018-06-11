@@ -38,7 +38,7 @@ pod 'IBProperty'
 从[Github地址](https://github.com/SunriseOYR/IBProperty) 下载项目，然后将IBProperty 和 Aspects(如果项目中已经集成 则不需要) 文件夹拖入到工程中即可
 
 ## 使用
----
+
 **IBProperty只需要集成到项目中就可以为xib/storyboard服务了**
 
 然后你就可以在xib/storyboard 选中对象赋值了（具体属性及含义参照本文最后）
