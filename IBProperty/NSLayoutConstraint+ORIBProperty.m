@@ -10,12 +10,14 @@
 #import "ORIBProperty.h"
 
 static NSString *ib_adaptXTopConstantKey = @"ib_adaptXTopConstantKey";
+static NSString *ib_adaptXBottowConstantKey = @"ib_adaptXBottowConstantKey";
+
 
 @implementation NSLayoutConstraint (ORIBProperty)
 
 - (void)setIb_adaptConstant:(BOOL)ib_adaptConstant {
     
-    if (ib_adaptConstant == YES && self.ib_adaptXTopConstant == NO) {
+    if (ib_adaptConstant == YES && self.ib_adaptXTopConstant == NO && self.ib_adaptXBottowConstant == NO ) {
         self.constant = IB_HP(self.constant);
     }
 }
@@ -40,6 +42,21 @@ static NSString *ib_adaptXTopConstantKey = @"ib_adaptXTopConstantKey";
     return [objc_getAssociatedObject(self, &ib_adaptXTopConstantKey) boolValue];
 }
 
+- (void)setIb_adaptXBottowConstant:(BOOL)ib_adaptXBottowConstant {
+    
+    objc_setAssociatedObject(self, &ib_adaptXBottowConstantKey, @(ib_adaptXBottowConstant), OBJC_ASSOCIATION_ASSIGN);
+    
+    if (ib_adaptXBottowConstant == YES) {
+        //iPhone X
+        if ([UIScreen mainScreen].bounds.size.height > 800) {
+            self.constant += 34;
+        }
+    }
+}
+
+- (BOOL)ib_adaptXBottowConstant {
+    return [objc_getAssociatedObject(self, &ib_adaptXBottowConstantKey) boolValue];
+}
 
 
 @end

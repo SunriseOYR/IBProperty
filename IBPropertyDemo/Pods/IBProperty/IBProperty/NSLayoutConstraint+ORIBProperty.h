@@ -19,9 +19,15 @@ IB_DESIGNABLE
 @property (nonatomic, assign) IBInspectable BOOL ib_adaptConstant;
 
 /*
- * 适配导航栏高度，若为YES constant将不会适配比例，而是在iPhone X 上加上24pt, 常用于 为自定义导航栏的子视图添加约束
+ * 若为YES constant将不会适配比例，而是在iPhone X 上加上24pt, 常用于 为自定义导航栏的子视图添加约束
  * constant would not adapt but add 24px in iPhone X
  */
 @property (nonatomic, assign) IBInspectable BOOL ib_adaptXTopConstant;
+
+/*
+ * 若为YES constant将不会适配比例，而是在iPhone X 上加上34pt, 常用于底部视图
+ * constant would not adapt but add 34px in iPhone X
+ */
+@property (nonatomic, assign) IBInspectable BOOL ib_adaptXBottowConstant;
 
 @end

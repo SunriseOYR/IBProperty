@@ -19,6 +19,33 @@ static const NSString *ib_gradientEndColorKey = @"ib_gradientEndColorKey";
 static const NSString *ib_gradientLayerKey = @"ib_gradientLayerKey";
 
 
+@interface UIImage (IBYYImage)
+
+- (UIImage *)ib_addCornerRadius:(CGFloat)radius andSize:(CGSize)size;
+
+@end
+
+@implementation UIImage (IBYYImage)
+
+- (UIImage *)ib_addCornerRadius:(CGFloat)radius andSize:(CGSize)size {
+    
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    UIBezierPath * path = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(radius, radius)];
+    CGContextAddPath(ctx,path.CGPath);
+    CGContextClip(ctx);
+    [self drawInRect:rect];
+    CGContextDrawPath(ctx, kCGPathFillStroke);
+    UIImage * newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
+
+@end
+
+
 @implementation UIView (ORIBProperty)
 
 #pragma mark -- border
@@ -52,7 +79,56 @@ static const NSString *ib_gradientLayerKey = @"ib_gradientLayerKey";
     
     self.layer.cornerRadius = ib_cornerRadius;
 
-    [self _or_addRoundedCorners:UIRectCornerTopLeft | UIRectCornerTopRight | UIRectCornerBottomLeft | UIRectCornerBottomRight withRadii:CGSizeMake(ib_cornerRadius, ib_cornerRadius)];
+    
+    if (ib_cornerRadius == 0) {
+        return;
+    }
+    
+    self.layer.cornerRadius = ib_cornerRadius;
+    
+    if ([self isKindOfClass:[UIImageView class]]) {
+        
+        UIImageView *imageView = (UIImageView *)self;
+        
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            [self ib_methodExchangeWithSelector:@selector(setImage:) toSelector:@selector(ib_setImage:)];
+        });
+        
+        
+        if (imageView.image) {
+            imageView.image = imageView.image;
+        }
+        __weak typeof (self) weakSelf = self;
+        
+        [self aspect_hookSelector:@selector(setBounds:) withOptions:AspectPositionAfter usingBlock:^(){
+            
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            
+            if ([strongSelf isKindOfClass:[UIImageView class]]) {
+                UIImageView *imageview = (UIImageView *)strongSelf;
+                imageview.image = imageview.image;
+            }
+        } error:nil];
+        
+    }
+    
+    if ([self isKindOfClass:[UILabel class]]) {
+        self.layer.masksToBounds = YES;
+    }
+    
+    if ([self isKindOfClass:[UIButton class]]) {
+        UIButton *button = (UIButton *)self;
+        if (button.currentImage || button.currentBackgroundImage) {
+            self.layer.masksToBounds = YES;
+        }
+    }
+    
+    if (@available(iOS 8.0, *)) {
+        if ([self isKindOfClass:[UIVisualEffectView class]]) {
+            self.layer.masksToBounds = YES;
+        }
+    }
     
     return;
 }
@@ -70,11 +146,11 @@ static const NSString *ib_gradientLayerKey = @"ib_gradientLayerKey";
         __weak typeof (self) weakSelf = self;
 
         [self aspect_hookSelector:@selector(setBounds:) withOptions:AspectPositionAfter usingBlock:^(){
-            
+
             __strong typeof(weakSelf) strongSelf = weakSelf;
-            
+
             self.ib_cornerRadius = strongSelf.bounds.size.height / 2.0f;
- 
+
         } error:nil];
     }
     
@@ -84,31 +160,22 @@ static const NSString *ib_gradientLayerKey = @"ib_gradientLayerKey";
     return self.layer.cornerRadius == self.bounds.size.height / 2.0f;
 }
 
-//
-- (void)_or_addRoundedCorners:(UIRectCorner)corners
-                   withRadii:(CGSize)radii {
+- (void)ib_setImage:(UIImage *)image {
     
-    [self _ib_addRoundedCorners:corners withRadii:radii];
+    UIImage *aImage = image;
     
-    __weak typeof (self) weakSelf = self;
-    [self aspect_hookSelector:@selector(layoutSubviews) withOptions:AspectPositionAfter usingBlock:^{
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf _ib_addRoundedCorners:corners withRadii:radii];
-    } error:nil];
-    
+    if (!self.layer.masksToBounds && self.ib_cornerRadius > 0) {
+        
+        CGSize size = self.bounds.size;
+        if (size.width == 0 || size.height == 0) {
+            size = image.size;
+        }
+        aImage = [image ib_addCornerRadius:self.layer.cornerRadius andSize:self.bounds.size];
+
+        aImage = aImage == nil ? image : aImage;
+    }
+    [self ib_setImage:aImage];
 }
-
-- (void)_ib_addRoundedCorners:(UIRectCorner)corners
-                    withRadii:(CGSize)radii {
-    
-    UIBezierPath* rounded = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:corners cornerRadii:radii];
-    CAShapeLayer* shape = [[CAShapeLayer alloc] init];
-    [shape setPath:rounded.CGPath];
-    
-    self.layer.mask = shape;
-}
-
-
 
 #pragma mark -- shadow
 
@@ -177,10 +244,12 @@ static const NSString *ib_gradientLayerKey = @"ib_gradientLayerKey";
         gradientLayer.locations = @[@(0.0f), @(1.0f)];
         gradientLayer.zPosition = -100;
         [self.layer addSublayer:gradientLayer];
+        
         [self ib_setAssociateValue:gradientLayer withKey:@"gradientLayer"];
         
         [self aspect_hookSelector:@selector(layoutSubviews) withOptions:AspectPositionAfter usingBlock:^{
             gradientLayer.frame = self.bounds;
+            gradientLayer.cornerRadius = self.layer.cornerRadius;
         } error:nil];
         
     }

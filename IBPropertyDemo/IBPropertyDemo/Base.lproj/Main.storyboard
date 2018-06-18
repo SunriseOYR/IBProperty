@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7KG-Cl-KSt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7KG-Cl-KSt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -233,7 +233,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2.1" translatesAutoresizingMaskIntoConstraints="NO" id="KUd-Qr-pyq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head" translatesAutoresizingMaskIntoConstraints="NO" id="KUd-Qr-pyq">
                                 <rect key="frame" x="137.5" y="184.5" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Ows-Sm-l0z">
@@ -250,6 +250,9 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="ib_cornerCircle" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="ib_borderWidth">
                                         <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="ib_gradientStartColor">
+                                        <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
@@ -554,9 +557,9 @@
     </scenes>
     <resources>
         <image name="2" width="720" height="450"/>
-        <image name="2.1" width="448" height="448"/>
         <image name="202" width="1440" height="900"/>
         <image name="Settings" width="16" height="16"/>
         <image name="ani" width="299" height="390"/>
+        <image name="head" width="448" height="448"/>
     </resources>
 </document>
