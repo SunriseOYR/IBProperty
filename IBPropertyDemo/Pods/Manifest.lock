@@ -1,6 +1,6 @@
 PODS:
   - Aspects (1.4.1)
-  - IBProperty (1.1.7):
+  - IBProperty (1.1.8):
     - Aspects (~> 1.4.1)
 
 DEPENDENCIES:
@@ -13,7 +13,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
-  IBProperty: e060c020e128b9e1ba5f1c5d23b9b37a4297fb99
+  IBProperty: f12ad1b7b5b951617a6c8c6f83b1e79191389a1c
 
 PODFILE CHECKSUM: 7bc986ef4d163690b51efcd49599bffe2b16f5c1
 
