@@ -10,10 +10,14 @@
 
 ## 更新日志
 
-###### 2018-06-11 ~ cocoapods version 1.1.6
+###### 2018-06-18 ~ cocoapods version 1.1.8
+* CornerRadius：移除mask实现方式，因为mask会触发离屏渲染。恢复并优化了Core Graphics绘制圆角
+* 解决渐变和圆角同时设置偶尔会发生冲突的问题
+* AdaptXBottowConstant：加入iPhone X底部约束适配
+###### 2018-06-11 ~ cocoapods version 1.1.7
 * 截图：此前有一张截图中的iPhone SE 显示不完整，是由于因为款 mac-pro 上 se模拟器缩放到最小，引发的渲染问题，类似于tableView的横线。感谢网友[limingLiuBaBa](https://github.com/limingLiuBaBa)指出
-* CornerRadius：此前为了解决离屏渲染，圆角是通过图片重绘的形式实现，只针对UIImageView，且效率相对较低，偶尔有误差。现在通过layer的mask 实现，无须重绘，更加高效，且对所有视图都有效
-* Gradient：为所有视图加入了简单的渐变色处理，细节见文末。  
+* Gradient：为所有视图加入了简单的渐变色处理，细节见文末。
+* CornerRadius：由layer的mask 替换之前的Core Graphics绘制。 
 
 所有属性见文末Property
 
