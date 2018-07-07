@@ -86,19 +86,22 @@ static NSInteger const effectViewTag = 2018;
     effectView.ib_cornerRadius = self.ib_cornerRadius;
     effectView.ib_cornerCircle = self.ib_cornerCircle;
 
-    __weak typeof (self) weakSelf = self;
+    IB_WEAKIFY(self);
     
     [self aspect_hookSelector:@selector(setIb_cornerCircle:) withOptions:AspectPositionAfter usingBlock:^{
-        effectView.ib_cornerCircle = weakSelf.ib_cornerCircle;
+        IB_STRONGIFY(self);
+        effectView.ib_cornerCircle = self.ib_cornerCircle;
     } error:nil];
     
     [self aspect_hookSelector:@selector(setIb_cornerRadius:) withOptions:AspectPositionAfter usingBlock:^{
-        effectView.ib_cornerRadius = weakSelf.ib_cornerRadius;
+        IB_STRONGIFY(self);
+        effectView.ib_cornerRadius = self.ib_cornerRadius;
     } error:nil];
     
     [self aspect_hookSelector:@selector(setBounds:) withOptions:AspectPositionAfter usingBlock:^{
-        effectView.bounds = weakSelf.bounds;
-        effectView.frame = weakSelf.bounds;
+        IB_STRONGIFY(self);
+        effectView.bounds = self.bounds;
+        effectView.frame = self.bounds;
     } error:nil];
     
     return effectView;

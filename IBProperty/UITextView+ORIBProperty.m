@@ -48,26 +48,28 @@ static NSInteger const placeholderTag = 2017;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textEndEditing) name:UITextViewTextDidEndEditingNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange) name:UITextViewTextDidChangeNotification object:nil];
 
-        __weak typeof (self) weakSelf = self;
+        IB_WEAKIFY(self);
 
         [self aspect_hookSelector:@selector(setBounds:) withOptions:AspectPositionAfter usingBlock:^{
-            [weakSelf frameChangedWith:label];
+            IB_STRONGIFY(self);
+            [self frameChangedWith:label];
             [label sizeToFit];
         } error:nil];
         
         [self aspect_hookSelector:@selector(setText:) withOptions:AspectPositionAfter usingBlock:^{
-            __strong typeof(weakSelf) strongSelf = weakSelf;
-            strongSelf.ib_plceholderLabel.hidden = strongSelf.text.length > 0 || [strongSelf isFirstResponder];
+            IB_STRONGIFY(self);
+            self.ib_plceholderLabel.hidden = self.text.length > 0 || [self isFirstResponder];
         } error:nil];
         
         [self aspect_hookSelector:@selector(setTextContainerInset:) withOptions:AspectPositionAfter usingBlock:^{
-            [weakSelf frameChangedWith:label];
+            IB_STRONGIFY(self);
+            [self frameChangedWith:label];
             [label sizeToFit];
         } error:nil];
         
         [self aspect_hookSelector:@selector(setFont:) withOptions:AspectPositionAfter usingBlock:^{
-            __strong typeof(weakSelf) strongSelf = weakSelf;
-            strongSelf.ib_plceholderLabel.font = strongSelf.font;
+            IB_STRONGIFY(self);
+            self.ib_plceholderLabel.font = self.font;
         } error:nil];
     }
 }

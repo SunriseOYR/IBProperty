@@ -28,11 +28,11 @@
         
         [self setAttributedWirhAttributeName:NSUnderlineStyleAttributeName];
         
-        __weak typeof (self) weakSelf = self;
+        IB_WEAKIFY(self);
 
         [self aspect_hookSelector:@selector(setText:) withOptions:AspectPositionAfter usingBlock:^(){
-            
-            [weakSelf setAttributedWirhAttributeName:NSUnderlineStyleAttributeName];
+            IB_STRONGIFY(self);
+            [self setAttributedWirhAttributeName:NSUnderlineStyleAttributeName];
         } error:nil];
         
     }
@@ -48,11 +48,11 @@
         
         [self setAttributedWirhAttributeName:NSStrikethroughStyleAttributeName];
         
-        __weak typeof (self) weakSelf = self;
+        IB_WEAKIFY(self);
 
         [self aspect_hookSelector:@selector(setText:) withOptions:AspectPositionAfter usingBlock:^(){
-            
-            [weakSelf setAttributedWirhAttributeName:NSStrikethroughStyleAttributeName];
+            IB_STRONGIFY(self);
+            [self setAttributedWirhAttributeName:NSStrikethroughStyleAttributeName];
         } error:nil];
         
     }

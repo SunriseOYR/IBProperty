@@ -47,8 +47,9 @@ static const NSString *ib_adaptSizeKey = @"ib_adaptSizeKey";
     
     objc_setAssociatedObject(self, &ib_numberItemsForRowKey, @(ib_numberItemsForRow), OBJC_ASSOCIATION_COPY_NONATOMIC);
     self.ib_adaptSize = YES;
-
+    IB_WEAKIFY(self);
     [self.collectionView aspect_hookSelector:@selector(setBounds:) withOptions:AspectPositionAfter usingBlock:^{
+        IB_STRONGIFY(self);
         self.ib_adaptSize = YES;
     } error:nil];
     

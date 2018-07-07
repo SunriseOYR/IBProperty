@@ -16,9 +16,37 @@
 #define IB_PROPORTION  [UIScreen mainScreen].bounds.size.width / 375.f
 #define IB_HP(x)     x * IB_PROPORTION
 
-//#define IBWeakObj(x) __weak typeof(x) x##Weak = x;
-//#define IBStrongObj(x) __strong typeof(x) x##Strong = x;
+#ifndef IB_WEAKIFY
+#if DEBUG
+#if __has_feature(objc_arc)
+#define IB_WEAKIFY(object) __weak __typeof__(object) weak##_##object = object
+#else
+#define IB_WEAKIFY(object) __block __typeof__(object) block##_##object = object
+#endif
+#else
+#if __has_feature(objc_arc)
+#define IB_WEAKIFY(object) __weak __typeof__(object) weak##_##object = object
+#else
+#define IB_WEAKIFY(object) __block __typeof__(object) block##_##object = object
+#endif
+#endif
+#endif
 
+#ifndef IB_STRONGIFY
+#if DEBUG
+#if __has_feature(objc_arc)
+#define IB_STRONGIFY(object) __typeof__(object) object = weak##_##object
+#else
+#define IB_STRONGIFY(object) __typeof__(object) object = block##_##object
+#endif
+#else
+#if __has_feature(objc_arc)
+#define IB_STRONGIFY(object) __typeof__(object) object = weak##_##object
+#else
+#define IB_STRONGIFY(object) __typeof__(object) object = block##_##object
+#endif
+#endif
+#endif
 
 #endif /* ORIBProperty_h */
 

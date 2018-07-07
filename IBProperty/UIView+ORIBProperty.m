@@ -99,14 +99,14 @@ static const NSString *ib_gradientLayerKey = @"ib_gradientLayerKey";
         if (imageView.image) {
             imageView.image = imageView.image;
         }
-        __weak typeof (self) weakSelf = self;
+        IB_WEAKIFY(self);
         
         [self aspect_hookSelector:@selector(setBounds:) withOptions:AspectPositionAfter usingBlock:^(){
             
-            __strong typeof(weakSelf) strongSelf = weakSelf;
+            IB_STRONGIFY(self);
             
-            if ([strongSelf isKindOfClass:[UIImageView class]]) {
-                UIImageView *imageview = (UIImageView *)strongSelf;
+            if ([self isKindOfClass:[UIImageView class]]) {
+                UIImageView *imageview = (UIImageView *)self;
                 imageview.image = imageview.image;
             }
         } error:nil];
@@ -143,13 +143,13 @@ static const NSString *ib_gradientLayerKey = @"ib_gradientLayerKey";
         
         self.ib_cornerRadius = self.bounds.size.height / 2.0f;
         
-        __weak typeof (self) weakSelf = self;
+        IB_WEAKIFY(self);
 
         [self aspect_hookSelector:@selector(setBounds:) withOptions:AspectPositionAfter usingBlock:^(){
 
-            __strong typeof(weakSelf) strongSelf = weakSelf;
+            IB_STRONGIFY(self);
 
-            self.ib_cornerRadius = strongSelf.bounds.size.height / 2.0f;
+            self.ib_cornerRadius = self.bounds.size.height / 2.0f;
 
         } error:nil];
     }
@@ -247,7 +247,9 @@ static const NSString *ib_gradientLayerKey = @"ib_gradientLayerKey";
         
         [self ib_setAssociateValue:gradientLayer withKey:@"gradientLayer"];
         
+        IB_WEAKIFY(self);
         [self aspect_hookSelector:@selector(layoutSubviews) withOptions:AspectPositionAfter usingBlock:^{
+            IB_STRONGIFY(self);
             gradientLayer.frame = self.bounds;
             gradientLayer.cornerRadius = self.layer.cornerRadius;
         } error:nil];

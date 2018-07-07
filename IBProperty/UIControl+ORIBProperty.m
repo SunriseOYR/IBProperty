@@ -14,7 +14,9 @@
 - (void)setIb_reClickEnabled:(BOOL)ib_reClickEnabled {
     
     if (ib_reClickEnabled == YES) {
+        IB_WEAKIFY(self);
         [self aspect_hookSelector:@selector(sendAction:to:forEvent:) withOptions:AspectPositionAfter usingBlock:^(){
+            IB_STRONGIFY(self);
             self.enabled = NO;
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 self.enabled = YES;
