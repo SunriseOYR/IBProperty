@@ -33,7 +33,11 @@ static NSString *ib_adaptXBottowConstantKey = @"ib_adaptXBottowConstantKey";
     if (ib_adaptXTopConstant == YES) {
         //iPhone X
         if ([UIScreen mainScreen].bounds.size.height > 800) {
-            self.constant += 24;
+            if (self.firstAttribute == NSLayoutAttributeCenterY) {
+                self.constant += 12;
+            }else {
+                self.constant += 24;
+            }
         }
     }
 }
