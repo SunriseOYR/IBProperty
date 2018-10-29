@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-IB_DESIGNABLE
-
 @interface UICollectionViewFlowLayout (ORIBProperty) 
 
 /* itemSize、minimumLineSpacing、minimumInteritemSpacing、headerReferenceSize、footerReferenceSize、sectionInset
