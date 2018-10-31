@@ -10,6 +10,8 @@
 
 ## 更新日志
 
+###### 2018-07-07 ~ cocoapods version 1.1.9
+* 解决极少部分block循环引用的问题
 ###### 2018-06-18 ~ cocoapods version 1.1.8
 * CornerRadius：移除mask实现方式，因为mask会触发离屏渲染。恢复并优化了Core Graphics绘制圆角
 * 解决渐变和圆角同时设置偶尔会发生冲突的问题

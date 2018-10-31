@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -82,8 +82,8 @@
 		0B8DEB8469F2832F8CC3239EB71D49E6 /* IBProperty-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IBProperty-dummy.m"; sourceTree = "<group>"; };
 		0D41D9B20EADEF4FC97A66449244D819 /* UITextField+ORIBProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextField+ORIBProperty.h"; path = "IBProperty/UITextField+ORIBProperty.h"; sourceTree = "<group>"; };
 		11D866EFED8B9B624508CA934348F975 /* Pods-IBPropertyDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-IBPropertyDemo-resources.sh"; sourceTree = "<group>"; };
-		1829733FD1472DACCD581A655123A615 /* libPods-IBPropertyDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-IBPropertyDemoUITests.a"; path = "libPods-IBPropertyDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		193B3F40EDEEE5CF27E289BC0D887476 /* libIBProperty.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libIBProperty.a; path = libIBProperty.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1829733FD1472DACCD581A655123A615 /* libPods-IBPropertyDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IBPropertyDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		193B3F40EDEEE5CF27E289BC0D887476 /* libIBProperty.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIBProperty.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B5E3B572A55A0990767AE31D67F4C7D /* NSLayoutConstraint+ORIBProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+ORIBProperty.m"; path = "IBProperty/NSLayoutConstraint+ORIBProperty.m"; sourceTree = "<group>"; };
 		1FBBD9D4506BF71AD2D845FF63F6EA5D /* Pods-IBPropertyDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IBPropertyDemo.release.xcconfig"; sourceTree = "<group>"; };
 		26BF02C4EB39C248D6E266FF8A7C3DCB /* Pods-IBPropertyDemoUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IBPropertyDemoUITests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -102,12 +102,12 @@
 		7ECEFA093C0B18BF36BCCEB973D041B8 /* NSObject+ORIBProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+ORIBProperty.m"; path = "IBProperty/NSObject+ORIBProperty.m"; sourceTree = "<group>"; };
 		8917B8915332D266AEF848087C4B98EF /* UILabel+ORIBProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UILabel+ORIBProperty.h"; path = "IBProperty/UILabel+ORIBProperty.h"; sourceTree = "<group>"; };
 		8B501B7B26916A96782F4141FC06631D /* Pods-IBPropertyDemoUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-IBPropertyDemoUITests-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		974574E2B9F251B962073F6AFD947C0C /* Pods-IBPropertyDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IBPropertyDemo-acknowledgements.plist"; sourceTree = "<group>"; };
 		9A8E4D3845A062D59DD88FD54BC86669 /* ORIBProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ORIBProperty.h; path = IBProperty/ORIBProperty.h; sourceTree = "<group>"; };
 		A4939523B15A8324150A6FF7DA60B2E3 /* UILabel+ORIBProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UILabel+ORIBProperty.m"; path = "IBProperty/UILabel+ORIBProperty.m"; sourceTree = "<group>"; };
 		A49755E408A4343879F33678A4EE5F02 /* UIView+ORIBProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+ORIBProperty.m"; path = "IBProperty/UIView+ORIBProperty.m"; sourceTree = "<group>"; };
-		A78FFE58E4A05189EC1EE650381B5B35 /* libPods-IBPropertyDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-IBPropertyDemoTests.a"; path = "libPods-IBPropertyDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A78FFE58E4A05189EC1EE650381B5B35 /* libPods-IBPropertyDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IBPropertyDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A841C2734526F3782788F39765F4687B /* IBProperty-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IBProperty-prefix.pch"; sourceTree = "<group>"; };
 		A9112480E6B3BD244EEC8ECCA7728595 /* UITextView+ORIBProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextView+ORIBProperty.m"; path = "IBProperty/UITextView+ORIBProperty.m"; sourceTree = "<group>"; };
 		AAF60CD97150F5E4C5E6F33CE0A0269E /* Pods-IBPropertyDemoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-IBPropertyDemoTests-dummy.m"; sourceTree = "<group>"; };
@@ -118,12 +118,12 @@
 		C2ABE92A41B20D5A8E9446ABC34956BE /* Aspects-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Aspects-dummy.m"; sourceTree = "<group>"; };
 		C2B2468DE2EB7EA541618719A5C6E751 /* UIControl+ORIBProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIControl+ORIBProperty.h"; path = "IBProperty/UIControl+ORIBProperty.h"; sourceTree = "<group>"; };
 		C785E27C1F717A6925922FCCE7C25CDF /* Pods-IBPropertyDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IBPropertyDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		CC93037D2AA01F0CB8AA2394F4F6DB00 /* libAspects.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libAspects.a; path = libAspects.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC93037D2AA01F0CB8AA2394F4F6DB00 /* libAspects.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAspects.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDB6A26DEEDDDA81D72108499CF79696 /* UIControl+ORIBProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIControl+ORIBProperty.m"; path = "IBProperty/UIControl+ORIBProperty.m"; sourceTree = "<group>"; };
 		CDF465F5CE0FEB66A44E54A904D3E54D /* UIView+ORIBProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+ORIBProperty.h"; path = "IBProperty/UIView+ORIBProperty.h"; sourceTree = "<group>"; };
 		CE0A18460EED597C07EDCF47B940A2DD /* Pods-IBPropertyDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IBPropertyDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D09E570D18068022A9420BCC79255FE8 /* IBProperty.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IBProperty.xcconfig; sourceTree = "<group>"; };
-		D25746EF418C11CCA4EC95FCC2727B16 /* libPods-IBPropertyDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-IBPropertyDemo.a"; path = "libPods-IBPropertyDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D25746EF418C11CCA4EC95FCC2727B16 /* libPods-IBPropertyDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IBPropertyDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D031C054470A439EDC692A941723F3 /* UIButton+ORIBProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+ORIBProperty.m"; path = "IBProperty/UIButton+ORIBProperty.m"; sourceTree = "<group>"; };
 		D5E96603C2BF3CA75517185C9C3158B1 /* Pods-IBPropertyDemoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-IBPropertyDemoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D884EB7953722C2375BF276E91FB669F /* Pods-IBPropertyDemoUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-IBPropertyDemoUITests-frameworks.sh"; sourceTree = "<group>"; };
@@ -245,7 +245,6 @@
 				40DBB816FD5DEAAE21136A072F87E553 /* Aspects.m */,
 				3F09B499D44C1D8449FE62AEC770627C /* Support Files */,
 			);
-			name = Aspects;
 			path = Aspects;
 			sourceTree = "<group>";
 		};
@@ -275,7 +274,6 @@
 				A49755E408A4343879F33678A4EE5F02 /* UIView+ORIBProperty.m */,
 				FF3F2DB241094AE47B9D8DA96EAD3639 /* Support Files */,
 			);
-			name = IBProperty;
 			path = IBProperty;
 			sourceTree = "<group>";
 		};
@@ -456,7 +454,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1000;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -678,7 +676,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/Aspects/Aspects-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -880,7 +878,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/Aspects/Aspects-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
