@@ -11,7 +11,7 @@
 ## 更新日志
 
 ###### 2018-07-07 ~ cocoapods version 1.1.9
-* 解决因为IBProperty 引起的 `Failed to render and update auto layout` 错误， 这是一个渲染错误，并不会影响代码的运行。
+* 解决因为IBProperty 引起的 `Failed to render and update auto layout` 错误， 这是一个渲染错误，并不会影响程序的运行。
 ###### 2018-07-07 ~ cocoapods version 1.1.9
 * 解决极少部分block循环引用的问题
 ###### 2018-06-18 ~ cocoapods version 1.1.8
