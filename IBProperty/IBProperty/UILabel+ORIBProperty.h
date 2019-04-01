@@ -11,11 +11,6 @@
 
 @interface UILabel (ORIBProperty)
 
-/*
- * 根据屏幕的宽度 适配 字体大小
- * adapt font size by screen width
- */
-@property (nonatomic, assign) IBInspectable BOOL ib_adaptFont;
 
 /*
  * 给文字添加 下划线

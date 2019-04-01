@@ -17,4 +17,11 @@
  */
 @property (nonatomic, assign) IBInspectable BOOL ib_reClickEnabled;
 
+
+/*
+ * 额外点击区域
+ * extra Touch Area
+ */
+@property (nonatomic, assign) UIEdgeInsets ib_extraTouchArea;
+
 @end
