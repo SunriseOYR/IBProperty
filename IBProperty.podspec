@@ -28,8 +28,8 @@ Pod::Spec.new do |s|
     ss.ios.deployment_target = '8.0'
 
     ss.source_files = "IBProperty","IBProperty/Basis/**/*"
-    s.requires_arc = true
-    s.dependency "Aspects", "~> 1.4.1"
+    ss.requires_arc = true
+    ss.dependency "Aspects", "~> 1.4.1"
   end
 
 end
