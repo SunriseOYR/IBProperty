@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
  s.subspec 'Basis' do |ss|
     ss.ios.deployment_target = '8.0'
 
-    ss.source_files = "IBProperty","IBProperty/Basis/**/*"
+    ss.source_files = "IBProperty/Basis/**/*"
     ss.requires_arc = true
     ss.dependency "Aspects", "~> 1.4.1"
   end
