@@ -7,7 +7,7 @@
 //
 
 #import "UIImageView+ORIBProperty.h"
-#import "UIView+ORIBProperty.h"
+#import "UIView+IBPropertyBasis.h"
 #import "ORIBProperty.h"
 
 static NSInteger const effectViewTag = 2018;

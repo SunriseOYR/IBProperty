@@ -10,15 +10,6 @@
 
 @interface UIView (ORIBProperty)
 
-//border
-@property(nonatomic, assign) IBInspectable CGFloat ib_borderWidth;
-@property(nonatomic, assign) IBInspectable UIColor *ib_borderColor;
-
-//cornerRadius
-@property(nonatomic, assign) IBInspectable CGFloat ib_cornerRadius;
-
-//视图的 ib_cornerRadius 始终保持高度的一半
-@property (nonatomic, assign) IBInspectable BOOL ib_cornerCircle;
 
 //shadow
 @property(nonatomic, assign) IBInspectable CGSize ib_shadowOffset;

@@ -1,1 +1,1 @@
-../../../IBProperty/IBProperty/UITextView+ORIBProperty.h
+../../../IBProperty/IBProperty/Basis/UITextView+ORIBProperty.h

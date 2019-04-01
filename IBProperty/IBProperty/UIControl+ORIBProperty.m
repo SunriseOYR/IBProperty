@@ -7,6 +7,7 @@
 //
 
 #import "UIControl+ORIBProperty.h"
+#import "NSObject+ORIBProperty.h"
 #import "ORIBProperty.h"
 
 @implementation UIControl (ORIBProperty)

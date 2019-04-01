@@ -1,1 +1,1 @@
-../../../IBProperty/IBProperty/NSObject+ORIBProperty.h
+../../../IBProperty/IBProperty/Basis/NSObject+ORIBProperty.h

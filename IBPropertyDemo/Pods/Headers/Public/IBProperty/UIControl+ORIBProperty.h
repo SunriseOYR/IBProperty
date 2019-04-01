@@ -1,1 +1,1 @@
-../../../IBProperty/IBProperty/UIControl+ORIBProperty.h
+../../../IBProperty/IBProperty/Basis/UIControl+ORIBProperty.h
