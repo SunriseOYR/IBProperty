@@ -8,23 +8,6 @@
 有兴趣的朋友可以参考唐巧的[这篇文章](http://blog.devtang.com/2015/03/22/ios-dev-controversy-2/)
 本文只是为喜欢使用或是想去使用 xib/storyboard 的朋友，提供一个强大的工具。在使用 xib/storyboard的时候，更加方便灵活，同时也为 xib/storyboard在添加约束，适配屏幕上做了一些改进，使之使用起来更加简单有效
 
-## 更新日志
-
-###### 2018-10-30 ~ cocoapods version 1.2.0
-* 解决因为IBProperty 引起的 `Failed to render and update auto layout` 错误， 这是一个渲染错误，并不会影响程序的运行。
-###### 2018-07-07 ~ cocoapods version 1.1.9
-* 解决极少部分block循环引用的问题
-###### 2018-06-18 ~ cocoapods version 1.1.8
-* CornerRadius：移除mask实现方式，因为mask会触发离屏渲染。恢复并优化了Core Graphics绘制圆角
-* 解决渐变和圆角同时设置偶尔会发生冲突的问题
-* AdaptXBottowConstant：加入iPhone X底部约束适配
-###### 2018-06-11 ~ cocoapods version 1.1.7
-* 截图：此前有一张截图中的iPhone SE 显示不完整，是由于因为款 mac-pro 上 se模拟器缩放到最小，引发的渲染问题，类似于tableView的横线。感谢网友[limingLiuBaBa](https://github.com/limingLiuBaBa)指出
-* Gradient：为所有视图加入了简单的渐变色处理，细节见文末。
-* CornerRadius：由layer的mask 替换之前的Core Graphics绘制。 
-
-所有属性见文末Property
-
 ## IBProperty
 
 下图为IBProperty通过Storyboard搭建的效果图
@@ -146,6 +129,31 @@ IBProperty不需要引用任何头文件，除非确实需要在代码中使用�
         ib_adaptConstant;
         / / 适配导航栏高度，若为YES constant将不会适配比例，而是在iPhone X 上加上24pt, 常用于 为自定义导航栏的子视图添加约束 
         ib_adaptXTopConstant;
+
+## 更新日志
+---
+###### 2019-04-01 ~ cocoapods version 1.2.3
+* 由于 `xcode 10` 对`xib/storyboard` 的渲染 支持性较之前版本更差(有猜测对设备的要求更高)， 故将常用属性提到`Basis`文件夹
+建议使用 以下方式导入
+
+       //pod 导入
+       pod 'IBProperty/Basis'
+
+###### 2018-10-30 ~ cocoapods version 1.2.0
+* 解决因为IBProperty 引起的 `Failed to render and update auto layout` 错误， 这是一个渲染错误，并不会影响程序的运行。
+###### 2018-07-07 ~ cocoapods version 1.1.9
+* 解决极少部分block循环引用的问题
+###### 2018-06-18 ~ cocoapods version 1.1.8
+* CornerRadius：移除mask实现方式，因为mask会触发离屏渲染。恢复并优化了Core Graphics绘制圆角
+* 解决渐变和圆角同时设置偶尔会发生冲突的问题
+* AdaptXBottowConstant：加入iPhone X底部约束适配
+###### 2018-06-11 ~ cocoapods version 1.1.7
+* 截图：此前有一张截图中的iPhone SE 显示不完整，是由于因为款 mac-pro 上 se模拟器缩放到最小，引发的渲染问题，类似于tableView的横线。感谢网友[limingLiuBaBa](https://github.com/limingLiuBaBa)指出
+* Gradient：为所有视图加入了简单的渐变色处理，细节见文末。
+* CornerRadius：由layer的mask 替换之前的Core Graphics绘制。 
+
+所有属性见文末Property
+
 
 ## 后续
 
