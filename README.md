@@ -23,8 +23,12 @@ IBProperty 通过IB_DESIGNABLE 和 IBInspectable 以类目的形式为xib/storyb
 
 （oc、swift 无区别）
 * 使用cocoapods (推荐)
-
-pod 'IBProperty'  
+```
+ pod 'IBProperty'
+ //轻简版
+ pod 'IBProperty/Basis'
+```
+  
 * 手动下载    
 从[Github地址](https://github.com/SunriseOYR/IBProperty) 下载项目，然后将IBProperty 和 Aspects(如果项目中已经集成 则不需要) 文件夹拖入到工程中即可
 
